@@ -1,0 +1,126 @@
+{
+  "hero": {
+    "title": "Premier Property",
+    "titleHighlight": "Auctions",
+    "subtitle": "Find exceptional investment opportunities through our curated property auctions - where quality meets value.",
+    "viewUpcomingAuctions": "View Upcoming Auctions",
+    "howItWorks": "How It Works",
+    "categories": {
+      "commercial": "Commercial",
+      "residential": "Residential",
+      "premium": "Premium",
+      "events": "Events"
+    },
+    "trustIndicators": {
+      "heading": "Trusted by investors nationwide",
+      "annualAuctions": "100+ Annual Auctions",
+      "propertiesSold": "5,000+ Properties Sold",
+      "satisfaction": "95% Customer Satisfaction"
+    },
+    "howItWorksModal": {
+      "title": "How To Participate In Auctions",
+      "steps": {
+        "register": {
+          "title": "1. Register",
+          "description": "Create an account on our platform to access auction listings. You'll need to provide identification and contact information for verification purposes."
+        },
+        "getApproved": {
+          "title": "2. Get Approved",
+          "description": "Before bidding, you'll need to be approved for specific auction types. This may include providing proof of funds or a deposit depending on the property value."
+        },
+        "attendAuction": {
+          "title": "3. Attend Auction",
+          "description": "Join our online auctions at the scheduled time, or participate in in-person events at the designated locations. You can place bids within your pre-approved limit."
+        },
+        "completePurchase": {
+          "title": "4. Complete Purchase",
+          "description": "If you're the winning bidder, follow the payment instructions and complete all required paperwork within the specified timeframe to finalize your property purchase."
+        }
+      },
+      "assistance": {
+        "needHelp": "Need assistance?",
+        "contact": "Contact us at support@propertyauctions.com"
+      },
+      "gotIt": "Got It"
+    }
+  },
+  "about": {
+    "badge": "Exclusive Offerings",
+    "title": "About Our Auctions",
+    "subtitle": "Premium real estate auctions designed for visionary investors and discerning buyers",
+    "premiumOpportunities": {
+      "title": "Premium Opportunities",
+      "description": "We are leaders in delivering premium real estate opportunities through meticulously curated auctions designed for discerning investors. Our auctions feature an exceptional selection of properties, from luxury residences and prime commercial assets to high-yield investment opportunities — all within a transparent and competitive bidding environment through the approved platforms within the Kingdom."
+    },
+    "rigorousDueDiligence": {
+      "title": "Rigorous Due Diligence",
+      "description": "With rigorous due diligence and in-depth market intelligence, we ensure every auction offers unparalleled value and transparency. Our live auction events are where exceptional deals unfold, connecting discerning buyers with exclusive opportunities that rarely reach the open market."
+    },
+    "discoverOpportunities": {
+      "title": "Discover Opportunities",
+      "description": "Browse our collection of past successful sales and upcoming auction opportunities to discover your next premium real estate investment. Join our exclusive network of investors and gain access to exceptional properties before they hit the open market."
+    }
+  },
+  "featured": {
+    "badge": "Premium Properties",
+    "title": "Featured Upcoming Auctions",
+    "subtitle": "Exceptional properties coming to auction soon with premium locations and amenities",
+    "loading": "Loading featured properties...",
+    "noAuctions": "No featured auctions available at the moment.",
+    "checkBack": "Check back soon or browse our other available properties.",
+    "browseAll": "Browse All Properties",
+    "viewAll": "View All Auctions"
+  },
+  "upcoming": {
+    "title": "All Upcoming Auctions",
+    "subtitle": "Browse all available properties coming to auction"
+  },
+  "past": {
+    "title": "Recently Ended Auctions",
+    "subtitle": "Properties that were previously listed in our auctions",
+    "viewAll": "View All Past Auctions"
+  },
+  "cta": {
+    "title": "Interested in Our Auction Properties?",
+    "subtitle": "Contact our team to learn more about upcoming auctions, property viewings, and how you can participate.",
+    "contactTeam": "Contact Our Team"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say"
+  },
+  "auctionCard": {
+    "viewDetails": "View Property Details",
+    "startingBid": "Starting Bid",
+    "soldFor": "Sold For",
+    "estValue": "Est. Value",
+    "auctionDate": "Auction on",
+    "soldDate": "Sold on",
+    "auctionedDate": "Auctioned on",
+    "beds": "Beds",
+    "bed": "Bed",
+    "baths": "Baths",
+    "bath": "Bath",
+    "badges": {
+      "upcoming": "Upcoming",
+      "sold": "Sold",
+      "notSold": "Not Sold",
+      "featured": "Featured"
+    },
+    "countdown": {
+      "startsIn": "Auction starts in"
+    }
+  },
+  "countdown": {
+    "startsIn": "Auction starts in"
+  },
+  "elapsedTime": {
+    "timeSince": "Time Since Auction"
+  },
+  "auctions": {
+    "auctionCard": {
+      "countdown": {
+        "startsIn": "Auction starts in"
+      }
+    }
+  }
+}

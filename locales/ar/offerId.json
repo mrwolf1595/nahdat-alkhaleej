@@ -1,0 +1,73 @@
+{
+  "header": {
+    "backToListings": "العودة إلى القائمة",
+    "back": "رجوع",
+    "likeThisOffer": "الإعجاب بهذا العرض",
+    "alreadyLiked": "تم الإعجاب بالفعل",
+    "shareProperty": "مشاركة العقار"
+  },
+  "propertyDetails": {
+    "area": "المنطقة",
+    "bedrooms": "غرف نوم",
+    "bathrooms": "حمامات",
+    "yearBuilt": "سنة البناء",
+    "sqft": "قدم مربع",
+    "perSqft": "/قدم مربع",
+    "pricePerSqftUnavailable": "السعر لكل قدم مربع غير متوفر",
+    "description": "الوصف"
+  },
+  "contactAgent": {
+    "title": "تواصل مع الوكيل",
+    "about": "بخصوص",
+    "agent": "الوكيل",
+    "callAgent": "اتصل بالوكيل",
+    "emailAgent": "راسل الوكيل",
+    "chatNow": "محادثة الآن",
+    "availableNow": "متاح الآن",
+    "typicallyResponds": "يستجيب عادة خلال",
+    "scheduleTour": "حجز جولة",
+    "requestInfo": "طلب معلومات",
+    "inPersonTour": "جولة شخصية",
+    "videoTour": "جولة فيديو",
+    "yourName": "اسمك",
+    "yourEmail": "بريدك الإلكتروني",
+    "yourMessage": "رسالتك",
+    "sendMessage": "إرسال رسالة",
+    "privacyMessage": "بإرسالك، فإنك توافق على سياسة الخصوصية والشروط.",
+    "inquirySubject": "استفسار بخصوص",
+    "hijriDate": "التاريخ الهجري",
+    "selectDate": "اختر التاريخ",
+    "selectTime": "اختر الوقت",
+    "timeFormat": "صيغة الوقت",
+    "am": "صباحاً",
+    "pm": "مساءً"
+  },
+  "propertySummary": {
+    "title": "ملخص العقار",
+    "propertyId": "رقم العقار",
+    "propertyType": "نوع العقار",
+    "apartment": "شقة",
+    "viewDocuments": "عرض المستندات",
+    "propertyHistory": "تاريخ العقار"
+  },
+  "footerActions": {
+    "contact": "تواصل",
+    "alreadyLiked": "لقد أعجبت بهذا العرض مسبقاً.",
+    "thankYouLike": "شكراً لإعجابك بهذا العقار!",
+    "perSqft": "/قدم مربع"
+  },
+  "reviews": {
+    "customerReviews": "آراء العملاء"
+  },
+  "limitedTimeOffer": {
+    "title": "عرض لفترة محدودة",
+    "expiresSoon": "ينتهي قريباً",
+    "description": "احجز جولة هذا الأسبوع واحصل على فحص منزلي مجاني بقيمة 500 ريال.",
+    "claimOffer": "احصل على العرض"
+  },
+   "property": {
+    "videoTour": "جولة فيديو",
+    "premiumAmenities": "مرافق فاخرة"
+  }
+
+}

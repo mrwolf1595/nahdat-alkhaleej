@@ -1,0 +1,123 @@
+{
+    "offers": "العروض",
+    "companyName1": "العقارية",
+    "companyName2": "برو",
+    "companyName3": "المزادات",
+    "home": "الرئيسية",
+    "auctions": "المزادات",
+    "contactUs": "اتصل بنا",
+    "about": "من نحن",
+    "login": "تسجيل الدخول",
+    "register": "التسجيل",
+    "profile": "الملف الشخصي",
+    "dashboard": "لوحة التحكم",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج",
+    "language": "اللغة",
+    "theme": "المظهر",
+    "light": "فاتح",
+    "dark": "داكن",
+    "system": "النظام",
+    "search": "البحث",
+    "newListings": "إعلانات جديدة",
+    "featuredListings": "إعلانات مميزة",
+    "viewAll": "عرض الكل",
+    "moreDetails": "المزيد من التفاصيل",
+    "favorited": "المفضلة",
+    "share": "مشاركة",
+    "contact": "اتصال",
+    "close": "إغلاق",
+    "see": "مشاهدة",
+    "submit": "إرسال",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجاح",
+    "next": "التالي",
+    "previous": "السابق",
+    "tryAgain": "حاول مرة أخرى",
+    "somethingWentWrong": "حدث خطأ ما",
+    "propertyAlreadyLiked": "لقد أعجبت بهذا العقار بالفعل",
+    "auctionAlreadyLiked": "لقد أعجبت بهذا المزاد بالفعل",
+    "thanksForLikingProperty": "شكراً لإعجابك بهذا العقار!",
+    "thanksForLikingAuction": "شكراً لإعجابك بهذا المزاد!",
+    "failedToLike": "فشل في الإعجاب",
+    "image": "صورة",
+    "property": "عقار",
+    
+    "detail": {
+      "sections": {
+        "propertyDescription": "وصف العقار",
+        "auctionInformation": "معلومات المزاد",
+        "gallery": "معرض الصور",
+        "properties": "العقارات",
+        "customerReviews": "تقييمات العملاء",
+        "noReviews": "لا توجد تقييمات حتى الآن",
+        "noReviewsMessage": "كن أول من يترك تقييماً لهذا المزاد!",
+        "loadingReviews": "جاري تحميل التقييمات...",
+        "descriptionDisclaimer": "يوفر هذا الوصف تفاصيل رسمية حول العقار كما قدمها البائع."
+      },
+      "propertyInfo": {
+        "property": "عقار",
+        "area": "المساحة",
+        "price": "السعر",
+        "viewDetails": "عرض التفاصيل"
+      },
+      "auctionInfo": {
+        "date": "تاريخ المزاد",
+        "time": "وقت المزاد",
+        "startingBid": "سعر البدء",
+        "estimatedValue": "القيمة التقديرية"
+      },
+      "imageGallery": {
+        "swipe": "اسحب للتنقل",
+        "expandImage": "توسيع",
+        "imageCounter": "صورة {current} من {total}",
+        "auctionDesc": "يتميز هذا المزاد المثير بخيارات عقارية متميزة في مواقع رئيسية. سجل اهتمامك للمشاركة في عملية المزايدة وتأمين العقار الذي تحلم به.",
+        "registerInterest": "تسجيل الاهتمام",
+        "startingBid": "سعر البدء"
+      }
+    },
+    
+    "reviews": {
+      "form": {
+        "yourRating": "تقييمك",
+        "yourComment": "تعليقك",
+        "commentPlaceholder": "شارك تجربتك مع هذا المزاد...",
+        "characters": "حرف",
+        "sendButton": "إرسال التقييم",
+        "ratingRequired": "الرجاء اختيار تقييم",
+        "submitSuccess": "شكراً لتقييمك!",
+        "submitError": "فشل في إرسال التقييم",
+        "generalError": "حدث خطأ ما",
+        "ratingLabels": {
+          "1": "ضعيف",
+          "2": "مقبول",
+          "3": "جيد",
+          "4": "جيد جداً",
+          "5": "ممتاز"
+        }
+      },
+      "list": {
+        "averageRating": "متوسط التقييم",
+        "review": "تقييم",
+        "reviews": "تقييمات",
+        "failedToLoad": "فشل في تحميل التقييمات."
+      }
+    },
+    
+    "propertyCard": {
+      "moreImages": "عرض الصور",
+      "photos": "صور"
+    },
+    
+    "footerActions": {
+      "alreadyLiked": "لقد أعجبت بهذا العقار بالفعل",
+      "thankYouLike": "شكراً لاهتمامك!",
+      "perSqft": "لكل متر مربع",
+      "contact": "اتصال"
+    }
+  }

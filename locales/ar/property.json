@@ -1,0 +1,42 @@
+{
+    "details": {
+      "title": "تفاصيل العقار",
+      "loading": "جاري تحميل تفاصيل العقار...",
+      "notFound": "العقار غير موجود",
+      "notFoundMessage": "العقار الذي تبحث عنه غير موجود أو تمت إزالته.",
+      "images": {
+        "count": "صور",
+        "noImages": "لا توجد صور متاحة لهذا العقار",
+        "swipe": "اسحب"
+      },
+      "price": "السعر",
+      "location": "الموقع",
+      "propertyType": "نوع العقار",
+      "area": "المساحة",
+      "amenities": {
+        "title": "المرافق المميزة",
+        "bedrooms": "غرف النوم",
+        "bathrooms": "الحمامات"
+      },
+      "nearbyPlaces": {
+        "title": "الأماكن القريبة",
+        "viewOnMap": "عرض على الخريطة",
+        "locationMap": "خريطة الموقع"
+      },
+      "actions": {
+        "backToAuction": "العودة إلى المزاد",
+        "registerInterest": "تسجيل الاهتمام",
+        "viewAllProperties": "عرض جميع العقارات"
+      },
+      "propertyNumber": "العقار رقم",
+      "propertyLiking": {
+        "alreadyLiked": "لقد أعجبت بهذا العقار بالفعل.",
+        "thanksForLiking": "شكراً لإعجابك بهذا العقار! ❤️",
+        "failedToLike": "فشل في الإعجاب بهذا العقار.",
+        "somethingWentWrong": "حدث خطأ ما."
+      },
+      "auction": "المزاد",
+      "estimatedValue": "القيمة التقديرية",
+      "startingBid": "سعر البدء"
+    }
+  }

@@ -1,0 +1,42 @@
+{
+    "details": {
+      "title": "Property Details",
+      "loading": "Loading property details...",
+      "notFound": "Property Not Found",
+      "notFoundMessage": "The property you are looking for does not exist or has been removed.",
+      "images": {
+        "count": "Photos",
+        "noImages": "No images available for this property",
+        "swipe": "Swipe"
+      },
+      "price": "Price",
+      "location": "Location",
+      "propertyType": "Property Type",
+      "area": "Area",
+      "amenities": {
+        "title": "Featured Amenities",
+        "bedrooms": "Bedrooms",
+        "bathrooms": "Bathrooms"
+      },
+      "nearbyPlaces": {
+        "title": "Nearby Places",
+        "viewOnMap": "View on Map",
+        "locationMap": "Location Map"
+      },
+      "actions": {
+        "backToAuction": "Back to Auction",
+        "registerInterest": "Register Interest",
+        "viewAllProperties": "View All Properties"
+      },
+      "propertyNumber": "Property #",
+      "propertyLiking": {
+        "alreadyLiked": "You already liked this property.",
+        "thanksForLiking": "Thanks for liking this property! ❤️",
+        "failedToLike": "Failed to like this property.",
+        "somethingWentWrong": "Something went wrong."
+      },
+      "auction": "Auction",
+      "estimatedValue": "Estimated Value",
+      "startingBid": "Starting Bid"
+    }
+  }

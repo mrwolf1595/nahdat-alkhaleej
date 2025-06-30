@@ -1,0 +1,106 @@
+{
+  "discoverYourPerfectProperty": "اكتشف عقارك المثالي",
+  "browseExtensiveCollection": "تصفح مجموعتنا الواسعة من العقارات المميزة المصممة لتناسب احتياجاتك",
+  "sortBy": "الترتيب حسب",
+  "filters": {
+    "allLocations": "جميع المواقع",
+    "allTypes": "جميع الأنواع",
+    "anyPrice": "أي سعر",
+    "newest": "الأحدث",
+    "priceLowToHigh": "السعر: من الأقل إلى الأعلى",
+    "priceHighToLow": "السعر: من الأعلى إلى الأقل",
+    "mostPopular": "الأكثر شهرة",
+    "moreFilters": "المزيد من الفلاتر",
+    "lessFilters": "فلاتر أقل",
+    "showFilters": "عرض الفلاتر"
+  },
+  "filterTabs": {
+    "allProperties": "جميع العقارات",
+    "featured": "مميز",
+    "forSale": "للبيع",
+    "forRent": "للإيجار"
+  },
+  "propertyTypes": {
+    "allTypes": "جميع الأنواع",
+    "forSale": "للبيع",
+    "forRent": "للإيجار",
+    "featured": "مميز"
+  },
+  "locations": {
+    "allLocations": "جميع المواقع",
+    "riyadh": "الرياض",
+    "jeddah": "جدة",
+    "dammam": "الدمام",
+    "mecca": "مكة",
+    "medina": "المدينة",
+    "taif": "الطائف",
+    "abha": "أبها",
+    "alUla": "العلا",
+    "tabuk": "تبوك",
+    "jazan": "جازان",
+    "najran": "نجران"
+  },
+  "priceRanges": {
+    "anyPrice": "أي سعر",
+    "under500k": "أقل من 500,000 ريال",
+    "500kTo750k": "500,000 - 750,000 ريال",
+    "750kTo1m": "750,000 - 1,000,000 ريال",
+    "over1m": "أكثر من 1,000,000 ريال"
+  },
+  "findYourProperty": "ابحث عن عقارك",
+  "location": "الموقع",
+  "propertyType": "نوع العقار",
+  "priceRange": "نطاق السعر",
+  "noPropertiesFound": "لم يتم العثور على عقارات تطابق معايير البحث.",
+  "errorMessage": "فشل تحميل العقارات. الرجاء المحاولة مرة أخرى لاحقاً.",
+  "tryAgain": "حاول مرة أخرى",
+  "propertyCard": {
+    "forRent": "للإيجار",
+    "forSale": "للبيع",
+    "featured": "مميز",
+    "priceUponRequest": "السعر عند الطلب",
+    "beds": "غرف نوم",
+    "baths": "حمامات",
+    "sqft": "قدم مربع",
+    "viewProperty": "عرض العقار",
+    "locationUnavailable": "الموقع غير متوفر",
+    "untitledProperty": "عقار بدون عنوان",
+    "alreadyLiked": "لقد أعجبت بهذا العرض مسبقاً.",
+    "thankYouLike": "شكراً لإعجابك بهذا العقار!",
+    "somethingWentWrong": "حدث خطأ ما."
+  },
+  "hero": {
+    "findYourDreamHome": "ابحث عن منزل أحلامك",
+    "discoverProperties": "اكتشف العقارات التي تناسب أسلوب حياتك واحتياجاتك تمامًا",
+    "premiumLocations": "مواقع مميزة",
+    "exploreSelection": "استكشف مجموعتنا من العقارات في أكثر الأحياء المرغوبة",
+    "investmentOpportunities": "فرص استثمارية",
+    "secureYourFuture": "احمِ مستقبلك مع عقاراتنا الاستثمارية ذات العائد المرتفع",
+    "startYourSearch": "ابدأ بحثك"
+  },
+  "callToAction": {
+    "cantFind": "لا تجد ما تبحث عنه؟",
+    "contactTeam": "تواصل مع فريق الخبراء لدينا لمساعدتك في العثور على العقار المثالي الذي يناسب احتياجاتك.",
+    "contactUsToday": "تواصل معنا اليوم"
+  },
+  "newsletter": {
+    "subscribeTitle": "اشترك في نشرتنا الإخبارية",
+    "subscribeDescription": "ابق على اطلاع بالعقارات الجديدة ونصائح العقارات",
+    "enterEmail": "أدخل بريدك الإلكتروني",
+    "subscribe": "اشترك",
+    "thankYou": "شكراً لك على الاشتراك!",
+    "firstToKnow": "ستكون أول من يعرف عن العقارات والعروض الجديدة.",
+    "subscribeAnother": "اشترك ببريد إلكتروني آخر",
+    "enterValidEmail": "الرجاء إدخال عنوان بريد إلكتروني صالح"
+  },
+  "stats": {
+    "trackRecord": "سجلنا المثير للإعجاب",
+    "propertiesListed": "عقارات مدرجة",
+    "happyClients": "عملاء سعداء",
+    "citiesCovered": "مدن مغطاة",
+    "yearsExperience": "سنوات خبرة"
+  },
+  "testimonials": {
+    "title": "قالوا عنا"
+  }
+}

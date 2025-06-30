@@ -1,0 +1,16 @@
+{
+    "title": "Our Services",
+    "propertyListings": {
+      "title": "Property Listings",
+      "description": "Explore a wide range of residential, commercial, and luxury properties tailored to your needs."
+    },
+    "valuationServices": {
+      "title": "Valuation Services",
+      "description": "Get accurate, market-based property valuations for selling, buying, or legal needs."
+    },
+    "propertyAuctions": {
+      "title": "Property Auctions",
+      "description": "Participate in transparent and secure real estate auctions with high potential returns."
+    }
+  }
+  

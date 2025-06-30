@@ -1,0 +1,72 @@
+{
+  "header": {
+    "backToListings": "Back to Listings",
+    "back": "Back",
+    "likeThisOffer": "Like This Listing",
+    "alreadyLiked": "Already Liked",
+    "shareProperty": "Share Property"
+  },
+  "propertyDetails": {
+    "area": "Area",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "yearBuilt": "Year Built",
+    "sqft": "Square Feet",
+    "perSqft": "/sq ft",
+    "pricePerSqftUnavailable": "Price per sq ft unavailable",
+    "description": "Description"
+  },
+  "contactAgent": {
+    "title": "Contact Agent",
+    "about": "About",
+    "agent": "Agent",
+    "callAgent": "Call Agent",
+    "emailAgent": "Email Agent",
+    "chatNow": "Chat Now",
+    "availableNow": "Available Now",
+    "typicallyResponds": "Typically responds within",
+    "scheduleTour": "Schedule Tour",
+    "requestInfo": "Request Info",
+    "inPersonTour": "In-Person Tour",
+    "videoTour": "Video Tour",
+    "yourName": "Your Name",
+    "yourEmail": "Your Email",
+    "yourMessage": "Your Message",
+    "sendMessage": "Send Message",
+    "privacyMessage": "By submitting, you agree to Privacy Policy & Terms.",
+    "inquirySubject": "Inquiry About",
+    "hijriDate": "Hijri Date",
+    "selectDate": "Select Date",
+    "selectTime": "Select Time",
+    "timeFormat": "Time Format",
+    "am": "AM",
+    "pm": "PM"
+  },
+  "propertySummary": {
+    "title": "Property Summary",
+    "propertyId": "Property ID",
+    "propertyType": "Property Type",
+    "apartment": "Apartment",
+    "viewDocuments": "View Documents",
+    "propertyHistory": "Property History"
+  },
+  "footerActions": {
+    "contact": "Contact",
+    "alreadyLiked": "You've already liked this listing.",
+    "thankYouLike": "Thank you for liking this property!",
+    "perSqft": "/sq ft"
+  },
+  "reviews": {
+    "customerReviews": "Customer Reviews"
+  },
+  "limitedTimeOffer": {
+    "title": "Limited Time Offer",
+    "expiresSoon": "Expires Soon",
+    "description": "Book a tour this week and get a free 500 SAR home inspection.",
+    "claimOffer": "Claim Offer"
+  },
+   "property": {
+    "videoTour": "VideoTour",
+    "premiumAmenities": "premiumAmenities"
+  }
+}

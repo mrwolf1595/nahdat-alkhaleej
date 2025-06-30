@@ -1,0 +1,19 @@
+{
+    "title": "Latest Auctions & Evaluations",
+    "description": "Stay updated with the latest real estate auctions and property evaluations happening across the region.",
+    "upcomingAuctions": {
+      "title": "Upcoming Auctions",
+      "description": "Explore top upcoming auctions, from luxury villas to commercial investments.",
+      "nextAuction": "Next Auction: Tomorrow at 10:00 AM",
+      "propertiesAvailable": "15 Properties Available",
+      "viewAuctions": "View Auctions"
+    },
+    "recentEvaluations": {
+      "title": "Recent Evaluations",
+      "description": "See the latest property evaluations and discover the value of real estate in your area.",
+      "lastUpdated": "Last updated: Yesterday",
+      "newEvaluations": "30 New Evaluations This Week",
+      "viewEvaluations": "View Evaluations"
+    }
+  }
+  

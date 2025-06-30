@@ -1,0 +1,123 @@
+{
+    "offers": "Offers",
+    "companyName1": "Real Estate",
+    "companyName2": "Pro",
+    "companyName3": "Auctions",
+    "home": "Home",
+    "auctions": "Auctions",
+    "contactUs": "Contact Us",
+    "about": "About",
+    "login": "Login",
+    "register": "Register",
+    "profile": "Profile",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "logout": "Logout",
+    "language": "Language",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "search": "Search",
+    "newListings": "New Listings",
+    "featuredListings": "Featured Listings",
+    "viewAll": "View All",
+    "moreDetails": "More Details",
+    "favorited": "Favorited",
+    "share": "Share",
+    "contact": "Contact",
+    "close": "Close",
+    "see": "See",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "next": "Next",
+    "previous": "Previous",
+    "tryAgain": "Try Again",
+    "somethingWentWrong": "Something went wrong",
+    "propertyAlreadyLiked": "You already liked this property",
+    "auctionAlreadyLiked": "You already liked this auction",
+    "thanksForLikingProperty": "Thanks for liking this property!",
+    "thanksForLikingAuction": "Thanks for liking this auction!",
+    "failedToLike": "Failed to like",
+    "image": "image",
+    "property": "property",
+    
+    "detail": {
+      "sections": {
+        "propertyDescription": "Property Description",
+        "auctionInformation": "Auction Information",
+        "gallery": "Gallery",
+        "properties": "Properties",
+        "customerReviews": "Customer Reviews",
+        "noReviews": "No Reviews Yet",
+        "noReviewsMessage": "Be the first to leave a review for this auction!",
+        "loadingReviews": "Loading reviews...",
+        "descriptionDisclaimer": "This description provides official details about the property as provided by the seller."
+      },
+      "propertyInfo": {
+        "property": "Property",
+        "area": "Area",
+        "price": "Price",
+        "viewDetails": "View Details"
+      },
+      "auctionInfo": {
+        "date": "Auction Date",
+        "time": "Auction Time",
+        "startingBid": "Starting Bid",
+        "estimatedValue": "Estimated Value"
+      },
+      "imageGallery": {
+        "swipe": "Swipe to Navigate",
+        "expandImage": "Expand",
+        "imageCounter": "Image {current} of {total}",
+        "auctionDesc": "This exciting auction features premium real estate options in prime locations. Register your interest to participate in the bidding process and secure your dream property.",
+        "registerInterest": "Register Interest",
+        "startingBid": "Starting Bid"
+      }
+    },
+    
+    "reviews": {
+      "form": {
+        "yourRating": "Your Rating",
+        "yourComment": "Your Comment",
+        "commentPlaceholder": "Share your experience with this auction...",
+        "characters": "characters",
+        "sendButton": "Send Review",
+        "ratingRequired": "Please select a rating",
+        "submitSuccess": "Thank you for your review!",
+        "submitError": "Failed to submit review",
+        "generalError": "Something went wrong",
+        "ratingLabels": {
+          "1": "Poor",
+          "2": "Fair",
+          "3": "Good",
+          "4": "Very Good",
+          "5": "Excellent"
+        }
+      },
+      "list": {
+        "averageRating": "Average Rating",
+        "review": "review",
+        "reviews": "reviews",
+        "failedToLoad": "Failed to load reviews."
+      }
+    },
+    
+    "propertyCard": {
+      "moreImages": "View Images",
+      "photos": "photos"
+    },
+    
+    "footerActions": {
+      "alreadyLiked": "You've already liked this property",
+      "thankYouLike": "Thank you for your interest!",
+      "perSqft": "per sq.m",
+      "contact": "Contact"
+    }
+  }

@@ -1,0 +1,19 @@
+{
+    "title": "How It Works",
+    "description": "Whether you're buying, investing, or evaluating — our simple process makes it easy for you.",
+    "steps": {
+      "step1": {
+        "title": "Browse Properties",
+        "description": "Explore a wide range of offers and auctions from across the country."
+      },
+      "step2": {
+        "title": "Evaluate or Participate",
+        "description": "Request a professional evaluation or join live property auctions."
+      },
+      "step3": {
+        "title": "Close the Deal",
+        "description": "Finalize the deal, sign the paperwork, and move into your dream property."
+      }
+    }
+  }
+  

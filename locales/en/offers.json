@@ -1,0 +1,106 @@
+{
+  "discoverYourPerfectProperty": "Discover Your Perfect Property",
+  "browseExtensiveCollection": "Browse our extensive collection of premium properties designed to fit your needs",
+  "sortBy": "Sort By",
+  "filters": {
+    "allLocations": "All Locations",
+    "allTypes": "All Types",
+    "anyPrice": "Any Price",
+    "newest": "Newest",
+    "priceLowToHigh": "Price: Low to High",
+    "priceHighToLow": "Price: High to Low",
+    "mostPopular": "Most Popular",
+    "moreFilters": "More Filters",
+    "lessFilters": "Less Filters",
+    "showFilters": "Show Filters"
+  },
+  "filterTabs": {
+    "allProperties": "All Properties",
+    "featured": "Featured",
+    "forSale": "For Sale",
+    "forRent": "For Rent"
+  },
+  "propertyTypes": {
+    "allTypes": "All Types",
+    "forSale": "For Sale",
+    "forRent": "For Rent",
+    "featured": "Featured"
+  },
+  "locations": {
+    "allLocations": "All Locations",
+    "riyadh": "Riyadh",
+    "jeddah": "Jeddah",
+    "dammam": "Dammam",
+    "mecca": "Mecca",
+    "medina": "Medina",
+    "taif": "Taif",
+    "abha": "Abha",
+    "alUla": "AlUla",
+    "tabuk": "Tabuk",
+    "jazan": "Jazan",
+    "najran": "Najran"
+  },
+  "priceRanges": {
+    "anyPrice": "Any Price",
+    "under500k": "Under SR500K",
+    "500kTo750k": "SR500K - SR750K",
+    "750kTo1m": "SR750K - SR1M",
+    "over1m": "Over SR1M"
+  },
+  "findYourProperty": "Find Your Property",
+  "location": "Location",
+  "propertyType": "Property Type",
+  "priceRange": "Price Range",
+  "noPropertiesFound": "No properties found matching your search criteria.",
+  "errorMessage": "Failed to load properties. Please try again later.",
+  "tryAgain": "Try Again",
+  "propertyCard": {
+    "forRent": "For Rent",
+    "forSale": "For Sale",
+    "featured": "Featured",
+    "priceUponRequest": "Price Upon Request",
+    "beds": "Beds",
+    "baths": "Baths",
+    "sqft": "Sq Ft",
+    "viewProperty": "View Property",
+    "locationUnavailable": "Location Unavailable",
+    "untitledProperty": "Untitled Property",
+    "alreadyLiked": "You've already liked this listing.",
+    "thankYouLike": "Thank you for liking this property!",
+    "somethingWentWrong": "Something went wrong."
+  },
+  "hero": {
+    "findYourDreamHome": "Find Your Dream Home",
+    "discoverProperties": "Discover properties that perfectly fit your lifestyle and needs",
+    "premiumLocations": "Premium Locations",
+    "exploreSelection": "Explore our selection of properties in the most desirable neighborhoods",
+    "investmentOpportunities": "Investment Opportunities",
+    "secureYourFuture": "Secure your future with our high-yield investment properties",
+    "startYourSearch": "Start Your Search"
+  },
+  "callToAction": {
+    "cantFind": "Can't find what you're looking for?",
+    "contactTeam": "Contact our expert team to help you find the perfect property that suits your needs.",
+    "contactUsToday": "Contact Us Today"
+  },
+  "newsletter": {
+    "subscribeTitle": "Subscribe to Our Newsletter",
+    "subscribeDescription": "Stay updated on new properties and real estate tips",
+    "enterEmail": "Enter your email",
+    "subscribe": "Subscribe",
+    "thankYou": "Thank you for subscribing!",
+    "firstToKnow": "You'll be the first to know about new properties and offers.",
+    "subscribeAnother": "Subscribe another email",
+    "enterValidEmail": "Please enter a valid email address"
+  },
+  "stats": {
+    "trackRecord": "Our Impressive Track Record",
+    "propertiesListed": "Properties Listed",
+    "happyClients": "Happy Clients",
+    "citiesCovered": "Cities Covered",
+    "yearsExperience": "Years Experience"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say"
+  }
+}
