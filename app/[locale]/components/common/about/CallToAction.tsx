@@ -2,8 +2,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 const CallToAction: React.FC = () => {
+  const t = useTranslations('about.cta');
+
   // Animation variants for the section
   const titleVariants = {
     hidden: { opacity: 0, y: -30 },
@@ -113,7 +116,7 @@ const CallToAction: React.FC = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="text-4xl md:text-5xl font-bold mb-8 text-white"
         >
-          Join Our Journey
+          {t('title')}
         </motion.h2>
         
         <motion.p 
@@ -123,7 +126,7 @@ const CallToAction: React.FC = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto text-white/90"
         >
-          Whether you&apos;re looking to buy, sell, or invest in property, our team is ready to assist you every step of the way.
+          {t('subtitle')}
         </motion.p>
         
         <motion.div 
@@ -140,7 +143,7 @@ const CallToAction: React.FC = () => {
             href="/contact"
             className="bg-white text-blue-700 font-bold py-4 px-10 rounded-lg transition duration-200"
           >
-            Contact Us
+            {t('contactUs')}
           </motion.a>
           
           <motion.a 
@@ -150,7 +153,7 @@ const CallToAction: React.FC = () => {
             href="/offers"
             className="bg-transparent text-white font-bold py-4 px-10 border-2 border-white/80 rounded-lg transition duration-200"
           >
-            View Properties
+            {t('viewProperties')}
           </motion.a>
         </motion.div>
       </div>

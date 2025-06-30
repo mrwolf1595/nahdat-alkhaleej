@@ -3,8 +3,11 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search, BarChart4, Home, MapPin } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const HeroRecords = () => {
+  const t = useTranslations('records.hero');
+  
   const [shapes, setShapes] = useState<
     { width: number; height: number; left: number; top: number; duration: number }[]
   >([]);
@@ -24,8 +27,8 @@ const HeroRecords = () => {
     <section className="relative overflow-hidden rounded-4xl">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-700 via-blue-600 to-sky-500 opacity-90 z-0">
-<div className="absolute inset-0 bg-gradient-to-br from-white/10">
-</div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10">
+        </div>
       </div>
 
       {/* Animated shapes */}
@@ -61,7 +64,7 @@ const HeroRecords = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-md">
-            Property Records
+            {t('title')}
           </h1>
         </motion.div>
 
@@ -71,7 +74,7 @@ const HeroRecords = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Browse our comprehensive database of property sales, evaluations, and auction records.
+          {t('subtitle')}
         </motion.p>
 
         <motion.div
@@ -82,19 +85,19 @@ const HeroRecords = () => {
         >
           <div className="flex items-center text-white/90 hover:text-white transition-colors">
             <Search className="mr-2" size={24} />
-            <span>Advanced Search</span>
+            <span>{t('features.advancedSearch')}</span>
           </div>
           <div className="flex items-center text-white/90 hover:text-white transition-colors">
             <BarChart4 className="mr-2" size={24} />
-            <span>Market Analytics</span>
+            <span>{t('features.marketAnalytics')}</span>
           </div>
           <div className="flex items-center text-white/90 hover:text-white transition-colors">
             <Home className="mr-2" size={24} />
-            <span>Property Details</span>
+            <span>{t('features.propertyDetails')}</span>
           </div>
           <div className="flex items-center text-white/90 hover:text-white transition-colors">
             <MapPin className="mr-2" size={24} />
-            <span>Location Insights</span>
+            <span>{t('features.locationInsights')}</span>
           </div>
         </motion.div>
       </div>

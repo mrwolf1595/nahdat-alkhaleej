@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "title": "About",
+    "companyName": "Nahdat Al-Khaleej Real Estate",
+    "subtitle": "We're a dedicated team of real estate professionals committed to helping you find the perfect property."
+  },
+  "story": {
+    "title": "Our Story",
+    "paragraphs": {
+      "founding": "Founded in 2022, Nahdat Al-Khaleej Real Estate began as a visionary company with a simple mission: to provide honest, transparent, and professional real estate services that put client needs first. From the very beginning, we set out to revolutionize the local real estate market.",
+      "growth": "In just a few years, we've helped hundreds of clients find their dream homes, make smart investments, and navigate the complex world of real estate. Our rapid success is built on a foundation of trust, expertise, and a deep understanding of the evolving Saudi market.",
+      "future": "Today, Nahdat Al-Khaleej continues to innovate and grow, embracing new technologies and approaches while staying true to our core values. We're proud of our achievements and excited about the future as we continue to expand our services and help more clients achieve their real estate goals."
+    }
+  },
+  "values": {
+    "title": "Our Values",
+    "excellence": {
+      "title": "Excellence",
+      "description": "We strive for excellence in everything we do, from the properties we list to the service we provide to our clients."
+    },
+    "integrity": {
+      "title": "Integrity", 
+      "description": "We conduct our business with honesty, transparency, and ethical practices that build trust with our clients."
+    },
+    "clientFocused": {
+      "title": "Client-Focused",
+      "description": "Our clients' needs are at the center of everything we do. We listen, understand, and deliver solutions that work."
+    }
+  },
+  "milestones": {
+    "title": "Our Journey",
+    "items": {
+      "2022": {
+        "title": "Company Founded",
+        "description": "Nahdat Al-Khaleej Real Estate was established with a vision to provide exceptional real estate services in the Saudi market."
+      },
+      "2023": {
+        "title": "First Major Projects",
+        "description": "Successfully completed our first major property developments and established strong partnerships with leading developers."
+      },
+      "2024": {
+        "title": "Digital Innovation",
+        "description": "Launched our comprehensive digital platform featuring virtual tours, online consultations, and AI-powered property matching."
+      },
+      "2025": {
+        "title": "Market Leadership",
+        "description": "Achieved recognition as one of the fastest-growing real estate companies in the region with ambitious expansion plans."
+      }
+    }
+  },
+  "team": {
+    "title": "Meet Our Team"
+  },
+  "cta": {
+    "title": "Join Our Journey",
+    "subtitle": "Whether you're looking to buy, sell, or invest in property, our team is ready to assist you every step of the way.",
+    "contactUs": "Contact Us",
+    "viewProperties": "View Properties"
+  }
+}

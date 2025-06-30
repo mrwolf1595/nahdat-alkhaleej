@@ -13,8 +13,11 @@ import {
   Legend
 } from 'recharts';
 import { TrendingUp, Calendar, AlertCircle, DollarSign, Clock, Percent } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const MarketTrends = () => {
+  const t = useTranslations('records.marketTrends');
+  
   const [data, setData] = useState<{
     averageSalePrice: number;
     averageDaysOnMarket: number;
@@ -75,20 +78,20 @@ const MarketTrends = () => {
 
   // Custom tooltip formatter
   const formatTooltip = (value: number, name: string) => {
-    if (name === 'value') return [`$${value.toLocaleString()}`, 'Current'];
-    if (name === 'previous') return [`$${value.toLocaleString()}`, 'Previous Year'];
+    if (name === 'value') return [`$${value.toLocaleString()}`, t('chart.current')];
+    if (name === 'previous') return [`$${value.toLocaleString()}`, t('chart.previous')];
     return [value, name];
   };
 
   const formatDaysTooltip = (value: number, name: string) => {
-    if (name === 'value') return [`${value} days`, 'Current'];
-    if (name === 'previous') return [`${value} days`, 'Previous Year'];
+    if (name === 'value') return [`${value} days`, t('chart.current')];
+    if (name === 'previous') return [`${value} days`, t('chart.previous')];
     return [value, name];
   };
 
   const formatRatioTooltip = (value: number, name: string) => {
-    if (name === 'value') return [`${value.toFixed(1)}%`, 'Current'];
-    if (name === 'previous') return [`${value.toFixed(1)}%`, 'Previous Year'];
+    if (name === 'value') return [`${value.toFixed(1)}%`, t('chart.current')];
+    if (name === 'previous') return [`${value.toFixed(1)}%`, t('chart.previous')];
     return [value, name];
   };
 
@@ -130,13 +133,13 @@ const MarketTrends = () => {
             <div className="bg-blue-100 p-2 rounded-lg text-blue-600">
               <TrendingUp size={24} />
             </div>
-            <h2 className="text-3xl font-bold text-gray-800">Market Trends</h2>
+            <h2 className="text-3xl font-bold text-gray-800">{t('title')}</h2>
             <div className="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full text-gray-600 text-sm ml-0 md:ml-4">
               <Calendar size={16} />
-              <span>Updated weekly</span>
+              <span>{t('updatedWeekly')}</span>
             </div>
           </div>
-          <p className="text-gray-600">Comprehensive insights from our recent property transactions</p>
+          <p className="text-gray-600">{t('subtitle')}</p>
         </motion.div>
 
         {isLoading ? (
@@ -144,7 +147,7 @@ const MarketTrends = () => {
             <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-600"></div>
             <div className="flex items-center gap-2">
               <AlertCircle size={18} className="text-blue-600" />
-              <span className="text-gray-600">Loading market data...</span>
+              <span className="text-gray-600">{t('loading')}</span>
             </div>
           </div>
         ) : (
@@ -152,7 +155,7 @@ const MarketTrends = () => {
             {/* Average Sale Price */}
             <motion.div variants={itemVariants} className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold text-gray-800">Average Sale Price</h3>
+                <h3 className="text-lg font-bold text-gray-800">{t('averageSalePrice.title')}</h3>
                 <div className="p-2 bg-blue-50 rounded-lg">
                   <DollarSign size={20} className="text-blue-600" />
                 </div>
@@ -166,7 +169,7 @@ const MarketTrends = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                 </svg>
-                <span>Up 8.5% from last quarter</span>
+                <span>{t('averageSalePrice.change')}</span>
               </div>
 
               <div className="h-48 bg-gray-50 mt-4 rounded-lg overflow-hidden">
@@ -187,7 +190,7 @@ const MarketTrends = () => {
                       height={36} 
                       iconType="circle" 
                       iconSize={8} 
-                      formatter={(value) => value === 'value' ? 'Current Year' : 'Previous Year'} 
+                      formatter={(value) => value === 'value' ? t('chart.currentYear') : t('chart.previousYear')} 
                     />
                     <Line 
                       type="monotone" 
@@ -212,7 +215,7 @@ const MarketTrends = () => {
             {/* Days on Market */}
             <motion.div variants={itemVariants} className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold text-gray-800">Days on Market</h3>
+                <h3 className="text-lg font-bold text-gray-800">{t('daysOnMarket.title')}</h3>
                 <div className="p-2 bg-red-50 rounded-lg">
                   <Clock size={20} className="text-red-600" />
                 </div>
@@ -226,7 +229,7 @@ const MarketTrends = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
-                <span>Down 12% from last quarter</span>
+                <span>{t('daysOnMarket.change')}</span>
               </div>
 
               <div className="h-48 bg-gray-50 mt-4 rounded-lg overflow-hidden">
@@ -247,7 +250,7 @@ const MarketTrends = () => {
                       height={36} 
                       iconType="circle" 
                       iconSize={8} 
-                      formatter={(value) => value === 'value' ? 'Current Year' : 'Previous Year'} 
+                      formatter={(value) => value === 'value' ? t('chart.currentYear') : t('chart.previousYear')} 
                     />
                     <Line 
                       type="monotone" 
@@ -272,7 +275,7 @@ const MarketTrends = () => {
             {/* Sale-to-List Ratio */}
             <motion.div variants={itemVariants} className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold text-gray-800">Sale-to-List Ratio</h3>
+                <h3 className="text-lg font-bold text-gray-800">{t('saleToListRatio.title')}</h3>
                 <div className="p-2 bg-green-50 rounded-lg">
                   <Percent size={20} className="text-green-600" />
                 </div>
@@ -286,7 +289,7 @@ const MarketTrends = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                 </svg>
-                <span>Up 1.2% from last quarter</span>
+                <span>{t('saleToListRatio.change')}</span>
               </div>
 
               <div className="h-48 bg-gray-50 mt-4 rounded-lg overflow-hidden">
@@ -307,7 +310,7 @@ const MarketTrends = () => {
                       height={36} 
                       iconType="circle" 
                       iconSize={8} 
-                      formatter={(value) => value === 'value' ? 'Current Year' : 'Previous Year'} 
+                      formatter={(value) => value === 'value' ? t('chart.currentYear') : t('chart.previousYear')} 
                     />
                     <Line 
                       type="monotone" 

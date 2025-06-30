@@ -2,6 +2,7 @@
 
 import { useState, FormEvent, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 import TestimonialHeader from './Testimonials/TestimonialHeader';
 import ProgressBar from './Testimonials/ProgressBar';
@@ -10,13 +11,14 @@ import ThankYouMessage from './Testimonials/ThankYouMessage';
 import NavigationButtons from './Testimonials/NavigationButtons';
 import QuickFeedbackOption from './Testimonials/QuickFeedbackOption';
 import { FormDataType, useTestimonialForm } from './Testimonials/useTestimonialForm';
-import { stepConfig } from './Testimonials/stepConfig';
-
+ 
 interface TestimonialsProps {
   sectionTitle: string;
 }
 
 export default function TestimonialsComponent({ sectionTitle }: TestimonialsProps) {
+  const t = useTranslations('testimonials');
+  
   const {
     formData,
     handleChange,
@@ -32,6 +34,69 @@ export default function TestimonialsComponent({ sectionTitle }: TestimonialsProp
   const [submitted, setSubmitted] = useState(false);
   const [quickFeedback, setQuickFeedback] = useState(false);
   const [interactionCount, setInteractionCount] = useState(0);
+
+  // Step configuration with translations
+  const stepConfig = [
+    {
+      label: t('aboutYou'),
+      fields: [
+        {
+          label: t('form.name'),
+          fieldId: 'name',
+          required: true,
+        },
+        {
+          label: t('form.role'),
+          fieldId: 'role',
+        },
+      ],
+    },
+    {
+      label: t('experience'),
+      fields: [
+        {
+          label: t('form.satisfaction'),
+          fieldId: 'satisfaction',
+          required: true,
+        },
+        {
+          label: t('form.recommendation'),
+          fieldId: 'recommendation',
+        },
+      ],
+    },
+    {
+      label: t('feedback'),
+      fields: [
+        {
+          label: t('form.testimonial'),
+          fieldId: 'message',
+          required: true,
+        },
+        {
+          label: t('form.purpose'),
+          fieldId: 'useCase',
+        },
+      ],
+    },
+    {
+      label: t('additionalInfo'),
+      fields: [
+        {
+          label: t('form.returning'),
+          fieldId: 'returning',
+        },
+        {
+          label: t('form.improvement'),
+          fieldId: 'improvement',
+        },
+        {
+          label: t('form.avatar'),
+          fieldId: 'avatar',
+        },
+      ],
+    },
+  ];
 
   // Track user interaction to offer quick feedback option after some interactions
   useEffect(() => {
@@ -86,7 +151,7 @@ export default function TestimonialsComponent({ sectionTitle }: TestimonialsProp
   const handleQuickSubmit = async () => {
     // Validate essential fields
     if (!formData.name || !formData.satisfaction || !formData.message) {
-      alert("Please fill in your name, satisfaction level, and a brief message before submitting.");
+      alert(t('form.validationError'));
       return;
     }
 
@@ -126,7 +191,9 @@ export default function TestimonialsComponent({ sectionTitle }: TestimonialsProp
                 <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
                   {stepConfig[step].label}
                   {step === 0 && (
-                    <span className="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Quick start</span>
+                    <span className="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                      Quick start
+                    </span>
                   )}
                 </h3>
                 

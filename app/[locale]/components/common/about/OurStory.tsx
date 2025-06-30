@@ -2,9 +2,12 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import SectionTitle from './SectionTitle';
 
 const OurStory: React.FC = () => {
+  const t = useTranslations('about.story');
+
   // Animation variants for paragraphs
   const paragraphVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -27,7 +30,7 @@ const OurStory: React.FC = () => {
             gradient="from-purple-600 to-blue-600"
             className="mb-12"
           >
-            Our Story
+            {t('title')}
           </SectionTitle>
           
           <div className="prose prose-lg mx-auto space-y-8 text-gray-700">
@@ -39,9 +42,7 @@ const OurStory: React.FC = () => {
               custom={0}
               className="leading-relaxed text-lg"
             >
-              Founded in 2010, Estate Pro has grown from a small local agency to one of the region&apos;s leading real estate companies. 
-              Our journey began with a simple mission: to provide honest, transparent, and professional real estate services that 
-              put client needs first.
+              {t('paragraphs.founding')}
             </motion.p>
             
             <motion.p
@@ -52,9 +53,7 @@ const OurStory: React.FC = () => {
               custom={1}
               className="leading-relaxed text-lg"
             >
-              Over the years, we&apos;ve helped thousands of clients find their dream homes, make smart investments, and navigate the 
-              complex world of real estate. Our success is built on a foundation of trust, expertise, and a deep understanding of the 
-              local market.
+              {t('paragraphs.growth')}
             </motion.p>
             
             <motion.p
@@ -65,9 +64,7 @@ const OurStory: React.FC = () => {
               custom={2}
               className="leading-relaxed text-lg"
             >
-              Today, Estate Pro continues to innovate and grow, embracing new technologies and approaches while staying true to our 
-              core values. We&apos;re proud of our history and excited about the future as we continue to expand our services and help 
-              more clients achieve their real estate goals.
+              {t('paragraphs.future')}
             </motion.p>
           </div>
         </div>

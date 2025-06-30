@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 import { Bed, Bath, MapPin, Calendar, ArrowRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { NewRecord } from '@/types/records';
 
 interface RecordsListProps {
@@ -12,6 +13,8 @@ interface RecordsListProps {
 }
 
 const RecordsList: FC<RecordsListProps> = ({ records }) => {
+  const t = useTranslations('records.recordsList');
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -46,16 +49,16 @@ const RecordsList: FC<RecordsListProps> = ({ records }) => {
           className="flex justify-between items-center mb-10"
         >
           <h2 className="text-3xl font-bold text-gray-800 flex items-center">
-            <span className="mr-2">Records</span>
+            <span className="mr-2">{t('title')}</span>
             <span className="text-blue-600 text-lg font-medium bg-blue-50 px-3 py-1 rounded-full">
-              {records.length} Results
+              {records.length} {t('results')}
             </span>
           </h2>
           
           {records.length > 0 && (
             <div className="flex items-center gap-2 text-gray-500 text-sm">
               <Calendar size={16} />
-              <span>Last updated: Today</span>
+              <span>{t('lastUpdated')}</span>
             </div>
           )}
         </motion.div>
@@ -71,8 +74,8 @@ const RecordsList: FC<RecordsListProps> = ({ records }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-700">No records found</h3>
-            <p className="text-gray-500 mt-2">Try adjusting your filters to see more results</p>
+            <h3 className="text-xl font-semibold text-gray-700">{t('noRecords.title')}</h3>
+            <p className="text-gray-500 mt-2">{t('noRecords.subtitle')}</p>
           </motion.div>
         ) : (
           <motion.div 
@@ -108,7 +111,7 @@ const RecordsList: FC<RecordsListProps> = ({ records }) => {
                     </>
                   ) : (
                     <div className="h-full w-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                      <p className="text-gray-500">No Image Available</p>
+                      <p className="text-gray-500">{t('recordCard.noImageAvailable')}</p>
                     </div>
                   )}
                 </div>
@@ -125,14 +128,14 @@ const RecordsList: FC<RecordsListProps> = ({ records }) => {
                     {record.bedrooms && (
                       <div className="flex items-center text-gray-700">
                         <Bed size={18} className="mr-1 text-blue-500" />
-                        <span>{record.bedrooms} Beds</span>
+                        <span>{record.bedrooms} {t('beds')}</span>
                       </div>
                     )}
                     
                     {record.bathrooms && (
                       <div className="flex items-center text-gray-700">
                         <Bath size={18} className="mr-1 text-blue-500" />
-                        <span>{record.bathrooms} Baths</span>
+                        <span>{record.bathrooms} {t('baths')}</span>
                       </div>
                     )}
                   </div>
@@ -141,7 +144,7 @@ const RecordsList: FC<RecordsListProps> = ({ records }) => {
                     href={`/records/${record._id}`}
                     className="group flex items-center justify-between w-full mt-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-indigo-600 text-white text-center font-semibold py-3 px-4 rounded-lg transition-all duration-300"
                   >
-                    <span>View Details</span>
+                    <span>{t('viewDetails')}</span>
                     <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>

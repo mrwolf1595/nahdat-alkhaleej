@@ -31,6 +31,9 @@ async function loadMessages(locale: string) {
       offerId: (await import(`../../locales/${locale}/offerId.json`)).default,
       auctions: (await import(`../../locales/${locale}/auctions.json`)).default,
       auctionId: (await import(`../../locales/${locale}/auctionId.json`)).default,
+      records: (await import(`../../locales/${locale}/records.json`)).default,
+      about: (await import(`../../locales/${locale}/about.json`)).default,
+      contact: (await import(`../../locales/${locale}/contact.json`)).default,
       property: (await import(`../../locales/${locale}/property.json`)).default
     };
   } catch (error) {

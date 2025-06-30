@@ -2,26 +2,29 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { ValueCard as ValueCardType } from '@/types/about';
 import SectionTitle from './SectionTitle';
 import ValueCard from './ValueCard';
 import { FaLightbulb, FaShieldAlt, FaUsers } from 'react-icons/fa';
 
 const OurValues: React.FC = () => {
+  const t = useTranslations('about.values');
+
   const values: ValueCardType[] = [
     {
-      title: "Excellence",
-      description: "We strive for excellence in everything we do, from the properties we list to the service we provide to our clients.",
+      title: t('excellence.title'),
+      description: t('excellence.description'),
       icon: <FaLightbulb className="h-8 w-8" />
     },
     {
-      title: "Integrity",
-      description: "We conduct our business with honesty, transparency, and ethical practices that build trust with our clients.",
+      title: t('integrity.title'),
+      description: t('integrity.description'),
       icon: <FaShieldAlt className="h-8 w-8" />
     },
     {
-      title: "Client-Focused",
-      description: "Our clients' needs are at the center of everything we do. We listen, understand, and deliver solutions that work.",
+      title: t('clientFocused.title'),
+      description: t('clientFocused.description'),
       icon: <FaUsers className="h-8 w-8" />
     }
   ];
@@ -56,7 +59,7 @@ const OurValues: React.FC = () => {
       />
       
       <div className="container mx-auto px-4 relative z-10">
-        <SectionTitle gradient="from-indigo-600 to-blue-600">Our Values</SectionTitle>
+        <SectionTitle gradient="from-indigo-600 to-blue-600">{t('title')}</SectionTitle>
         
         <motion.div 
           variants={containerVariants}

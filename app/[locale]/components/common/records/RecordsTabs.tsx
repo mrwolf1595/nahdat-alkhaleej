@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Home, Scale, Gavel } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import type { RecordTab } from '../../../../../types/records';
 
 interface RecordsTabsProps {
@@ -11,10 +12,12 @@ interface RecordsTabsProps {
 }
 
 const RecordsTabs: React.FC<RecordsTabsProps> = ({ activeTab, setActiveTab }) => {
+  const t = useTranslations('records.tabs');
+
   const tabs = [
-    { id: 'sales' as RecordTab, label: 'Sales Records', icon: <Home size={20} /> },
-    { id: 'evaluations' as RecordTab, label: 'Property Evaluations', icon: <Scale size={20} /> },
-    { id: 'auctions' as RecordTab, label: 'Auction Results', icon: <Gavel size={20} /> },
+    { id: 'sales' as RecordTab, label: t('sales'), icon: <Home size={20} /> },
+    { id: 'evaluations' as RecordTab, label: t('evaluations'), icon: <Scale size={20} /> },
+    { id: 'auctions' as RecordTab, label: t('auctions'), icon: <Gavel size={20} /> },
   ];
 
   return (

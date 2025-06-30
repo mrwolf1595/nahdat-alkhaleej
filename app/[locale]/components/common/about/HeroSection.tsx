@@ -2,8 +2,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 const HeroSection: React.FC = () => {
+  const t = useTranslations('about.hero');
+
   return (
     <section className="relative overflow-hidden">
       {/* Background with gradient and animated shapes */}
@@ -51,7 +54,7 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-5xl md:text-6xl font-bold mb-6 text-white"
         >
-          About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-teal-300">Nahdat Al-Khaleej</span>
+          {t('title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-teal-300">{t('companyName')}</span>
         </motion.h1>
         
         <motion.p 
@@ -60,7 +63,7 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90 font-light"
         >
-          We&apos;re a dedicated team of real estate professionals committed to helping you find the perfect property.
+          {t('subtitle')}
         </motion.p>
       </div>
     </section>

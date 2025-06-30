@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "title": "Property Records",
+    "subtitle": "Browse our comprehensive database of property sales, evaluations, and auction records.",
+    "features": {
+      "advancedSearch": "Advanced Search",
+      "marketAnalytics": "Market Analytics",
+      "propertyDetails": "Property Details",
+      "locationInsights": "Location Insights"
+    }
+  },
+  "tabs": {
+    "sales": "Sales Records",
+    "evaluations": "Property Evaluations",
+    "auctions": "Auction Results"
+  },
+  "filters": {
+    "title": "Filter Records",
+    "activeFilters": "Active Filters",
+    "resetFilters": "Reset Filters",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "propertyType": {
+      "label": "Property Type",
+      "all": "All Property Types",
+      "land": "Land",
+      "apartment": "Apartment",
+      "villa": "Villa",
+      "building": "Building"
+    },
+    "location": {
+      "label": "Location",
+      "all": "All Locations"
+    },
+    "priceRange": {
+      "label": "Price Range",
+      "all": "All Price Ranges",
+      "under1M": "< 1M",
+      "1to3M": "1M - 3M",
+      "over3M": "> 3M"
+    }
+  },
+  "recordsList": {
+    "title": "Records",
+    "results": "Results",
+    "lastUpdated": "Last updated: Today",
+    "noRecords": {
+      "title": "No records found",
+      "subtitle": "Try adjusting your filters to see more results"
+    },
+    "viewDetails": "View Details",
+    "beds": "Beds",
+    "baths": "Baths",
+    "units": "Units"
+  },
+  "recordCard": {
+    "soldPrice": "Sold Price",
+    "listedPrice": "Listed Price",
+    "estimatedValue": "Estimated Value",
+    "startingBid": "Starting Bid",
+    "soldOn": "Sold on",
+    "evaluatedOn": "Evaluated on",
+    "auctionedOn": "Auctioned on",
+    "daysOnMarket": "days on market",
+    "viewFullDetails": "View Full Details",
+    "noImageAvailable": "No Image Available"
+  },
+  "marketTrends": {
+    "title": "Market Trends",
+    "subtitle": "Comprehensive insights from our recent property transactions",
+    "updatedWeekly": "Updated weekly",
+    "loading": "Loading market data...",
+    "averageSalePrice": {
+      "title": "Average Sale Price",
+      "change": "Up 8.5% from last quarter"
+    },
+    "daysOnMarket": {
+      "title": "Days on Market",
+      "change": "Down 12% from last quarter"
+    },
+    "saleToListRatio": {
+      "title": "Sale-to-List Ratio",
+      "change": "Up 1.2% from last quarter"
+    },
+    "chart": {
+      "current": "Current",
+      "previous": "Previous Year",
+      "currentYear": "Current Year",
+      "previousYear": "Previous Year"
+    }
+  },
+  "callToAction": {
+    "title": "Need a Professional Property Evaluation?",
+    "subtitle": "Our expert team provides accurate, market-based property evaluations to help you make informed decisions.",
+    "features": {
+      "expertAssessors": "Expert assessors with local knowledge",
+      "fastTurnaround": "Fast turnaround time - often within 48 hours",
+      "trustedByBanks": "Trusted by banks and financial institutions"
+    },
+    "requestEvaluation": "Request an Evaluation"
+  }
+}

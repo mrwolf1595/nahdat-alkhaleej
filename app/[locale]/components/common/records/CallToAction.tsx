@@ -4,8 +4,11 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BadgeCheck, ChevronRight, Clock, ShieldCheck } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 const CallToAction = () => {
+  const t = useTranslations('records.callToAction');
+  
   const [shapes, setShapes] = useState<
     { width: number; height: number; left: number; top: number; duration: number }[]
   >([]);
@@ -75,7 +78,7 @@ const CallToAction = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                Need a Professional Property Evaluation?
+                {t('title')}
               </motion.h2>
               
               <motion.p 
@@ -85,7 +88,7 @@ const CallToAction = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                Our expert team provides accurate, market-based property evaluations to help you make informed decisions.
+                {t('subtitle')}
               </motion.p>
               
               <motion.div
@@ -97,15 +100,15 @@ const CallToAction = () => {
               >
                 <div className="flex items-center text-white">
                   <BadgeCheck className="mr-3 text-green-300" size={24} />
-                  <span>Expert assessors with local knowledge</span>
+                  <span>{t('features.expertAssessors')}</span>
                 </div>
                 <div className="flex items-center text-white">
                   <Clock className="mr-3 text-green-300" size={24} />
-                  <span>Fast turnaround time - often within 48 hours</span>
+                  <span>{t('features.fastTurnaround')}</span>
                 </div>
                 <div className="flex items-center text-white">
                   <ShieldCheck className="mr-3 text-green-300" size={24} />
-                  <span>Trusted by banks and financial institutions</span>
+                  <span>{t('features.trustedByBanks')}</span>
                 </div>
               </motion.div>
               
@@ -119,7 +122,7 @@ const CallToAction = () => {
                   href="/contact"
                   className="group inline-flex items-center bg-white hover:bg-gray-50 text-blue-600 font-semibold py-3 px-8 rounded-xl transition duration-300 shadow-lg hover:shadow-xl"
                 >
-                  Request an Evaluation
+                  {t('requestEvaluation')}
                   <ChevronRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" size={20} />
                 </Link>
               </motion.div>

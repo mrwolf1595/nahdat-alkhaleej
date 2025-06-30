@@ -2,29 +2,20 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Milestone } from '@/types/about';
+import { useTranslations } from 'next-intl';
 import SectionTitle from './SectionTitle';
 import { FaBuilding, FaGlobeAmericas, FaAward, FaDigitalTachograph } from 'react-icons/fa';
 
-interface CompanyMilestonesProps {
-  milestones: Milestone[];
-}
+const CompanyMilestones: React.FC = () => {
+  const t = useTranslations('about.milestones');
 
-const CompanyMilestones: React.FC<CompanyMilestonesProps> = ({ milestones }) => {
-  // Add icons to milestones
-  const milestonesWithIcons = milestones.map((milestone, index) => {
-    const icons = [
-      <FaBuilding key="building" />,
-      <FaGlobeAmericas key="globe" />,
-      <FaAward key="award" />,
-      <FaDigitalTachograph key="digital" />
-    ];
-    
-    return {
-      ...milestone,
-      icon: icons[index % icons.length]
-    };
-  });
+  // Define milestones with their years and icons
+  const milestonesData = [
+    { year: '2022', key: '2022', icon: <FaBuilding key="building" /> },
+    { year: '2023', key: '2023', icon: <FaGlobeAmericas key="globe" /> },
+    { year: '2024', key: '2024', icon: <FaDigitalTachograph key="digital" /> },
+    { year: '2025', key: '2025', icon: <FaAward key="award" /> }
+  ];
 
   // Timeline variants for animation
   const timelineVariants = {
@@ -45,7 +36,7 @@ const CompanyMilestones: React.FC<CompanyMilestonesProps> = ({ milestones }) => 
       <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white pointer-events-none" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <SectionTitle gradient="from-blue-600 to-sky-500">Our Journey</SectionTitle>
+        <SectionTitle gradient="from-blue-600 to-sky-500">{t('title')}</SectionTitle>
         
         <div className="max-w-4xl mx-auto relative">
           {/* Timeline line (visible on desktop) - using a gradient line instead of dots */}
@@ -57,8 +48,8 @@ const CompanyMilestones: React.FC<CompanyMilestonesProps> = ({ milestones }) => 
             className="hidden md:block absolute left-[calc(25%-1px)] top-14 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-teal-500 z-0"
           />
           
-          {milestonesWithIcons.map((milestone, index) => (
-            <div key={index} className="flex flex-col md:flex-row mb-16 last:mb-0 relative">
+          {milestonesData.map((milestone, index) => (
+            <div key={milestone.year} className="flex flex-col md:flex-row mb-16 last:mb-0 relative">
               <div className="md:w-1/4 flex-shrink-0 mb-4 md:mb-0 relative">
                 <motion.span 
                   initial={{ opacity: 0, x: -20 }}
@@ -70,8 +61,6 @@ const CompanyMilestones: React.FC<CompanyMilestonesProps> = ({ milestones }) => 
                 >
                   {milestone.year}
                 </motion.span>
-                
-                {/* Removed the timeline dots that were causing issues */}
               </div>
               
               <motion.div 
@@ -93,9 +82,13 @@ const CompanyMilestones: React.FC<CompanyMilestonesProps> = ({ milestones }) => 
                   >
                     {milestone.icon}
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-800">{milestone.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-800">
+                    {t(`items.${milestone.key}.title`)}
+                  </h3>
                 </div>
-                <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+                <p className="text-gray-600 leading-relaxed">
+                  {t(`items.${milestone.key}.description`)}
+                </p>
               </motion.div>
             </div>
           ))}

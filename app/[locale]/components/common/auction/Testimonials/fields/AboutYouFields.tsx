@@ -1,5 +1,6 @@
 import { ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { FormDataType } from '../useTestimonialForm';
 
 interface AboutYouFieldsProps {
@@ -13,6 +14,8 @@ const AboutYouFields: React.FC<AboutYouFieldsProps> = ({
   handleChange,
   incrementInteraction
 }) => {
+  const t = useTranslations('testimonials');
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     handleChange(e);
     incrementInteraction();
@@ -40,7 +43,7 @@ const AboutYouFields: React.FC<AboutYouFieldsProps> = ({
         animate="visible"
       >
         <label className="block text-sm font-medium text-gray-700">
-          What is your full name?
+          {t('form.name')}
           <span className="text-red-500 ml-1">*</span>
         </label>
         <input
@@ -49,25 +52,25 @@ const AboutYouFields: React.FC<AboutYouFieldsProps> = ({
           onChange={handleInputChange}
           required
           className="input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm hover:border-blue-300"
-          placeholder="Enter your full name"
+          placeholder={t('form.namePlaceholder')}
         />
       </motion.div>
+      
       <motion.div>
-      <div>
-      <label className="block text-sm font-medium text-gray-700">
-          What is your Number?
-          <span className="text-red-500 ml-1">*</span>
-        </label>
-        <input
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-          placeholder="e.g. 0555555555"
-          className="input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm hover:border-blue-300"
-        />
-</div>
-
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            {t('form.phone')}
+            <span className="text-red-500 ml-1">*</span>
+          </label>
+          <input
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            placeholder={t('form.phonePlaceholder')}
+            className="input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm hover:border-blue-300"
+          />
+        </div>
       </motion.div>
       
       <motion.div 
@@ -77,19 +80,19 @@ const AboutYouFields: React.FC<AboutYouFieldsProps> = ({
         initial="hidden"
         animate="visible"
       >
-        <label className="block text-sm font-medium text-gray-700">What is your role?</label>
+        <label className="block text-sm font-medium text-gray-700">{t('form.role')}</label>
         <select 
           name="role" 
           value={formData.role} 
           onChange={handleInputChange} 
           className="input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm hover:border-blue-300"
         >
-          <option value="">Select a role</option>
-          <option value="Investor">Investor</option>
-          <option value="First-time Buyer">First-time Buyer</option>
-          <option value="Developer">Developer</option>
-          <option value="Real Estate Enthusiast">Real Estate Enthusiast</option>
-          <option value="Other">Other</option>
+          <option value="">{t('form.selectRole')}</option>
+          <option value="Investor">{t('form.roleOptions.investor')}</option>
+          <option value="First-time Buyer">{t('form.roleOptions.firstTimeBuyer')}</option>
+          <option value="Developer">{t('form.roleOptions.developer')}</option>
+          <option value="Real Estate Enthusiast">{t('form.roleOptions.realEstateEnthusiast')}</option>
+          <option value="Other">{t('form.roleOptions.other')}</option>
         </select>
       </motion.div>
     </div>

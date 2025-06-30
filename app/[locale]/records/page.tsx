@@ -11,6 +11,8 @@ import CallToAction from '../components/common/records/CallToAction';
 import { AuctionRecord, EvaluationRecord, NewRecord, RecordType, SalesRecord } from '@/types/records';
 
 export default function RecordsPage() {
+
+  
   const [activeTab, setActiveTab] = useState<RecordType>('sales');
   const [filters, setFilters] = useState({
     propertyType: '',

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Home, MapPin, DollarSign, Search, X } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 type RecordsFilterProps = {
   filters: {
@@ -20,6 +21,8 @@ type RecordsFilterProps = {
 };
 
 const RecordsFilter = ({ filters, setFilters }: RecordsFilterProps) => {
+  const t = useTranslations('records.filters');
+  
   const propertyTypes = ['land', 'apartment', 'villa', 'building'];
   const priceRanges = ['< 1M', '1M - 3M', '> 3M'];
   const locations = ['Riyadh', 'Jeddah', 'Mecca', 'Dammam'];
@@ -35,6 +38,25 @@ const RecordsFilter = ({ filters, setFilters }: RecordsFilterProps) => {
   };
   
   const hasActiveFilters = filters.propertyType || filters.location || filters.priceRange;
+
+  const getPropertyTypeLabel = (type: string) => {
+    const typeMap: { [key: string]: string } = {
+      land: t('propertyType.land'),
+      apartment: t('propertyType.apartment'),
+      villa: t('propertyType.villa'),
+      building: t('propertyType.building'),
+    };
+    return typeMap[type] || type;
+  };
+
+  const getPriceRangeLabel = (range: string) => {
+    const rangeMap: { [key: string]: string } = {
+      '< 1M': t('priceRange.under1M'),
+      '1M - 3M': t('priceRange.1to3M'),
+      '> 3M': t('priceRange.over3M'),
+    };
+    return rangeMap[range] || range;
+  };
 
   return (
     <motion.section 
@@ -52,12 +74,12 @@ const RecordsFilter = ({ filters, setFilters }: RecordsFilterProps) => {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <Search size={20} className="text-blue-600" />
-              <h2 className="text-xl font-bold text-gray-800">Filter Records</h2>
+              <h2 className="text-xl font-bold text-gray-800">{t('title')}</h2>
               
               {/* Active filters indicator */}
               {hasActiveFilters && (
                 <div className="ml-2 px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
-                  Active Filters
+                  {t('activeFilters')}
                 </div>
               )}
             </div>
@@ -70,7 +92,7 @@ const RecordsFilter = ({ filters, setFilters }: RecordsFilterProps) => {
                   onClick={resetFilters}
                   className="flex items-center gap-1 text-sm text-gray-500 hover:text-red-500 transition-colors"
                 >
-                  <X size={16} /> Reset Filters
+                  <X size={16} /> {t('resetFilters')}
                 </motion.button>
               )}
               
@@ -78,7 +100,7 @@ const RecordsFilter = ({ filters, setFilters }: RecordsFilterProps) => {
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="text-blue-600 hover:text-blue-800 transition-colors"
               >
-                {isExpanded ? 'Collapse' : 'Expand'}
+                {isExpanded ? t('collapse') : t('expand')}
               </button>
             </div>
           </div>
@@ -93,7 +115,7 @@ const RecordsFilter = ({ filters, setFilters }: RecordsFilterProps) => {
               <div className="space-y-2">
                 <label className="flex items-center gap-2 text-gray-700 font-medium">
                   <Home size={18} className="text-blue-600" />
-                  Property Type
+                  {t('propertyType.label')}
                 </label>
                 <div className="relative">
                   <select
@@ -101,10 +123,10 @@ const RecordsFilter = ({ filters, setFilters }: RecordsFilterProps) => {
                     onChange={(e) => setFilters((prev) => ({ ...prev, propertyType: e.target.value }))}
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 appearance-none"
                   >
-                    <option value="">All Property Types</option>
+                    <option value="">{t('propertyType.all')}</option>
                     {propertyTypes.map((type, index) => (
                       <option key={index} value={type}>
-                        {type.charAt(0).toUpperCase() + type.slice(1)}
+                        {getPropertyTypeLabel(type)}
                       </option>
                     ))}
                   </select>
@@ -120,7 +142,7 @@ const RecordsFilter = ({ filters, setFilters }: RecordsFilterProps) => {
               <div className="space-y-2">
                 <label className="flex items-center gap-2 text-gray-700 font-medium">
                   <MapPin size={18} className="text-blue-600" />
-                  Location
+                  {t('location.label')}
                 </label>
                 <div className="relative">
                   <select
@@ -128,7 +150,7 @@ const RecordsFilter = ({ filters, setFilters }: RecordsFilterProps) => {
                     onChange={(e) => setFilters((prev) => ({ ...prev, location: e.target.value }))}
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 appearance-none"
                   >
-                    <option value="">All Locations</option>
+                    <option value="">{t('location.all')}</option>
                     {locations.map((loc, index) => (
                       <option key={index} value={loc}>
                         {loc}
@@ -147,7 +169,7 @@ const RecordsFilter = ({ filters, setFilters }: RecordsFilterProps) => {
               <div className="space-y-2">
                 <label className="flex items-center gap-2 text-gray-700 font-medium">
                   <DollarSign size={18} className="text-blue-600" />
-                  Price Range
+                  {t('priceRange.label')}
                 </label>
                 <div className="relative">
                   <select
@@ -155,10 +177,10 @@ const RecordsFilter = ({ filters, setFilters }: RecordsFilterProps) => {
                     onChange={(e) => setFilters((prev) => ({ ...prev, priceRange: e.target.value }))}
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 appearance-none"
                   >
-                    <option value="">All Price Ranges</option>
+                    <option value="">{t('priceRange.all')}</option>
                     {priceRanges.map((range, index) => (
                       <option key={index} value={range}>
-                        {range}
+                        {getPriceRangeLabel(range)}
                       </option>
                     ))}
                   </select>

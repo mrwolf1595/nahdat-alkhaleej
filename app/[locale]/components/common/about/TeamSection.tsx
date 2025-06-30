@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { TeamMember } from '@/types/about';
 import SectionTitle from './SectionTitle';
 import TeamMemberCard from './TeamMemberCard';
@@ -11,6 +12,8 @@ interface TeamSectionProps {
 }
 
 const TeamSection: React.FC<TeamSectionProps> = ({ teamMembers }) => {
+  const t = useTranslations('about.team');
+
   // Container variants for staggered animations
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -47,7 +50,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ teamMembers }) => {
       />
       
       <div className="container mx-auto px-4 relative z-10">
-        <SectionTitle gradient="from-blue-600 to-indigo-600">Meet Our Team</SectionTitle>
+        <SectionTitle gradient="from-blue-600 to-indigo-600">{t('title')}</SectionTitle>
         
         <motion.div 
           variants={containerVariants}
@@ -66,7 +69,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ teamMembers }) => {
                 role={member.role} 
                 bio={member.bio} 
                 image={member.image}
-                index={0} // You can remove this prop if not needed
+                index={0}
               />
             </motion.div>
           ))}

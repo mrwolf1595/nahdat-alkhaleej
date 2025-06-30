@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "title": "سجلات العقارات",
+    "subtitle": "تصفح قاعدة بياناتنا الشاملة لمبيعات العقارات والتقييمات ونتائج المزادات.",
+    "features": {
+      "advancedSearch": "البحث المتقدم",
+      "marketAnalytics": "تحليلات السوق",
+      "propertyDetails": "تفاصيل العقار",
+      "locationInsights": "رؤى الموقع"
+    }
+  },
+  "tabs": {
+    "sales": "سجلات المبيعات",
+    "evaluations": "تقييمات العقارات",
+    "auctions": "نتائج المزادات"
+  },
+  "filters": {
+    "title": "تصفية السجلات",
+    "activeFilters": "مرشحات نشطة",
+    "resetFilters": "إعادة تعيين المرشحات",
+    "expand": "توسيع",
+    "collapse": "طي",
+    "propertyType": {
+      "label": "نوع العقار",
+      "all": "جميع أنواع العقارات",
+      "land": "أرض",
+      "apartment": "شقة",
+      "villa": "فيلا",
+      "building": "مبنى"
+    },
+    "location": {
+      "label": "الموقع",
+      "all": "جميع المواقع"
+    },
+    "priceRange": {
+      "label": "نطاق السعر",
+      "all": "جميع النطاقات السعرية",
+      "under1M": "أقل من مليون",
+      "1to3M": "من مليون إلى 3 مليون",
+      "over3M": "أكثر من 3 مليون"
+    }
+  },
+  "recordsList": {
+    "title": "السجلات",
+    "results": "نتيجة",
+    "lastUpdated": "آخر تحديث: اليوم",
+    "noRecords": {
+      "title": "لم يتم العثور على سجلات",
+      "subtitle": "حاول تعديل المرشحات لرؤية المزيد من النتائج"
+    },
+    "viewDetails": "عرض التفاصيل",
+    "beds": "غرف",
+    "baths": "حمامات",
+    "units": "وحدات"
+  },
+  "recordCard": {
+    "soldPrice": "سعر البيع",
+    "listedPrice": "السعر المدرج",
+    "estimatedValue": "القيمة المقدرة",
+    "startingBid": "سعر البدء",
+    "soldOn": "تم البيع في",
+    "evaluatedOn": "تم التقييم في",
+    "auctionedOn": "تم المزاد في",
+    "daysOnMarket": "يوم في السوق",
+    "viewFullDetails": "عرض التفاصيل الكاملة",
+    "noImageAvailable": "لا توجد صورة متاحة"
+  },
+  "marketTrends": {
+    "title": "اتجاهات السوق",
+    "subtitle": "رؤى شاملة من معاملاتنا العقارية الأخيرة",
+    "updatedWeekly": "يتم التحديث أسبوعياً",
+    "loading": "جارٍ تحميل بيانات السوق...",
+    "averageSalePrice": {
+      "title": "متوسط سعر البيع",
+      "change": "ارتفاع 8.5% من الربع الماضي"
+    },
+    "daysOnMarket": {
+      "title": "الأيام في السوق",
+      "change": "انخفاض 12% من الربع الماضي"
+    },
+    "saleToListRatio": {
+      "title": "نسبة البيع إلى الإدراج",
+      "change": "ارتفاع 1.2% من الربع الماضي"
+    },
+    "chart": {
+      "current": "الحالي",
+      "previous": "العام السابق",
+      "currentYear": "العام الحالي",
+      "previousYear": "العام السابق"
+    }
+  },
+  "callToAction": {
+    "title": "هل تحتاج تقييم عقاري احترافي؟",
+    "subtitle": "يقدم فريق الخبراء لدينا تقييمات عقارية دقيقة تعتمد على السوق لمساعدتك في اتخاذ قرارات مدروسة.",
+    "features": {
+      "expertAssessors": "مقيمون خبراء بمعرفة محلية",
+      "fastTurnaround": "وقت تسليم سريع - غالباً خلال 48 ساعة",
+      "trustedByBanks": "موثوق به من قبل البنوك والمؤسسات المالية"
+    },
+    "requestEvaluation": "طلب تقييم"
+  }
+}
