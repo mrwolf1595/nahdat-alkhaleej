@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 interface ProgressBarProps {
   currentStep: number;
@@ -7,6 +8,8 @@ interface ProgressBarProps {
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep, totalSteps, progress }) => {
+  const t = useTranslations('testimonials.progress');
+  
   return (
     <div className="mb-8">
       <div className="flex justify-between text-sm font-medium text-gray-600 mb-2">
@@ -14,7 +17,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep, totalSteps, prog
           <span className="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2">
             {currentStep}
           </span>
-          <span>of {totalSteps}</span>
+          <span>{t('of')} {totalSteps}</span>
         </span>
         <motion.span
           key={currentStep}
@@ -22,7 +25,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep, totalSteps, prog
           animate={{ opacity: 1, y: 0 }}
           className="font-semibold text-blue-600"
         >
-          {Math.round(progress)}% Complete
+          {Math.round(progress)}% {t('complete')}
         </motion.span>
       </div>
       <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">

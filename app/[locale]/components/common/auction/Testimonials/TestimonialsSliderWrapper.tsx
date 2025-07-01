@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import TestimonialsSlider from './TestimonialsSlider';
 import { Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 interface Testimonial {
   _id: string;
@@ -19,6 +20,7 @@ export default function TestimonialsSliderWrapper() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const t = useTranslations('testimonials.slider');
 
   
   useEffect(() => {
@@ -36,14 +38,14 @@ export default function TestimonialsSliderWrapper() {
         setTestimonials(data);
       } catch (error) {
         console.error('Error fetching testimonials:', error);
-        setError('Unable to load testimonials at this time');
+        setError(t('error'));
       } finally {
         setLoading(false);
       }
     }
 
     fetchTestimonials();
-  }, []);
+  }, [t]);
 
   if (loading) {
     return (
@@ -54,7 +56,7 @@ export default function TestimonialsSliderWrapper() {
       >
         <Loader2 className="h-10 w-10 text-blue-500 animate-spin mb-4" />
         <p className="text-gray-600 dark:text-gray-300 font-medium">
-          Loading amazing testimonials...
+          {t('loading')}
         </p>
       </motion.div>
     );
@@ -73,7 +75,7 @@ export default function TestimonialsSliderWrapper() {
             onClick={() => window.location.reload()} 
             className="mt-4 px-4 py-2 bg-red-100 dark:bg-red-800 hover:bg-red-200 dark:hover:bg-red-700 text-red-600 dark:text-red-300 rounded-md transition-colors duration-200"
           >
-            Try Again
+            {t('tryAgain')}
           </button>
         </div>
       </motion.div>

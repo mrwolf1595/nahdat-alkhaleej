@@ -34,6 +34,7 @@ async function loadMessages(locale: string) {
       records: (await import(`../../locales/${locale}/records.json`)).default,
       about: (await import(`../../locales/${locale}/about.json`)).default,
       contact: (await import(`../../locales/${locale}/contact.json`)).default,
+      testimonials: (await import(`../../locales/${locale}/testimonials.json`)).default,
       property: (await import(`../../locales/${locale}/property.json`)).default
     };
   } catch (error) {

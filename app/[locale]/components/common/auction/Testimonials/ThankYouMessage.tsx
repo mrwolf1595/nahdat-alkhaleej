@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { Check, Award, Star } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const ThankYouMessage: React.FC = () => {
+  const t = useTranslations('testimonials.thankYou');
+  
   return (
     <motion.div 
       initial={{ opacity: 0, scale: 0.9 }} 
@@ -43,7 +46,7 @@ const ThankYouMessage: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.5 }}
       >
-        Thank You!
+        {t('title')}
       </motion.h3>
       
       <motion.p 
@@ -52,7 +55,7 @@ const ThankYouMessage: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7, duration: 0.5 }}
       >
-        Your feedback is incredibly valuable to us. We appreciate you taking the time to share your thoughts.
+        {t('message')}
       </motion.p>
       
       <motion.div 
@@ -63,7 +66,7 @@ const ThankYouMessage: React.FC = () => {
         whileHover={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)" }}
       >
         <Award className="text-blue-500" size={28} />
-        <span className="text-blue-700 font-medium">You&apos;ve helped us improve our service!</span>
+        <span className="text-blue-700 font-medium">{t('achievement')}</span>
         
         <div className="flex mt-2">
           {[1, 2, 3, 4, 5].map((star, i) => (
@@ -87,7 +90,7 @@ const ThankYouMessage: React.FC = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.5 }}
       >
-        Back to Home
+        {t('backHome')}
       </motion.button>
     </motion.div>
   );

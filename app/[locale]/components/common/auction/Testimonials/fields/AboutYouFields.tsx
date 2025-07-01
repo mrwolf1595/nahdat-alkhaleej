@@ -14,7 +14,7 @@ const AboutYouFields: React.FC<AboutYouFieldsProps> = ({
   handleChange,
   incrementInteraction
 }) => {
-  const t = useTranslations('testimonials');
+  const t = useTranslations('testimonials.form');
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     handleChange(e);
@@ -43,7 +43,7 @@ const AboutYouFields: React.FC<AboutYouFieldsProps> = ({
         animate="visible"
       >
         <label className="block text-sm font-medium text-gray-700">
-          {t('form.name')}
+          {t('name')}
           <span className="text-red-500 ml-1">*</span>
         </label>
         <input
@@ -52,47 +52,51 @@ const AboutYouFields: React.FC<AboutYouFieldsProps> = ({
           onChange={handleInputChange}
           required
           className="input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm hover:border-blue-300"
-          placeholder={t('form.namePlaceholder')}
+          placeholder={t('namePlaceholder')}
         />
       </motion.div>
       
-      <motion.div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            {t('form.phone')}
-            <span className="text-red-500 ml-1">*</span>
-          </label>
-          <input
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            placeholder={t('form.phonePlaceholder')}
-            className="input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm hover:border-blue-300"
-          />
-        </div>
-      </motion.div>
-      
       <motion.div 
-        className="space-y-2"
+        className="space-y-2 mb-6"
         custom={1}
         variants={itemVariants}
         initial="hidden"
         animate="visible"
       >
-        <label className="block text-sm font-medium text-gray-700">{t('form.role')}</label>
+        <label className="block text-sm font-medium text-gray-700">
+          {t('phone')}
+          <span className="text-red-500 ml-1">*</span>
+        </label>
+        <input
+          name="phone"
+          value={formData.phone}
+          onChange={handleInputChange}
+          required
+          placeholder={t('phonePlaceholder')}
+          className="input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm hover:border-blue-300"
+        />
+      </motion.div>
+      
+      <motion.div 
+        className="space-y-2"
+        custom={2}
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <label className="block text-sm font-medium text-gray-700">{t('role')}</label>
         <select 
           name="role" 
           value={formData.role} 
           onChange={handleInputChange} 
           className="input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm hover:border-blue-300"
         >
-          <option value="">{t('form.selectRole')}</option>
-          <option value="Investor">{t('form.roleOptions.investor')}</option>
-          <option value="First-time Buyer">{t('form.roleOptions.firstTimeBuyer')}</option>
-          <option value="Developer">{t('form.roleOptions.developer')}</option>
-          <option value="Real Estate Enthusiast">{t('form.roleOptions.realEstateEnthusiast')}</option>
-          <option value="Other">{t('form.roleOptions.other')}</option>
+          <option value="">{t('selectRole')}</option>
+          <option value="Investor">{t('roleOptions.investor')}</option>
+          <option value="First-time Buyer">{t('roleOptions.firstTimeBuyer')}</option>
+          <option value="Developer">{t('roleOptions.developer')}</option>
+          <option value="Real Estate Enthusiast">{t('roleOptions.realEstateEnthusiast')}</option>
+          <option value="Other">{t('roleOptions.other')}</option>
         </select>
       </motion.div>
     </div>

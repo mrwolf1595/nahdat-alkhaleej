@@ -6,6 +6,7 @@ import Testimonials from '../components/common/auction/Testimonials';
 
 export default function ContactPage() {
   const t = useTranslations('contact');
+  const tTestimonials = useTranslations('testimonials'); // إضافة ترجمات منفصلة للشهادات
 
   // Form state
   const [formData, setFormData] = useState({
@@ -44,20 +45,6 @@ export default function ContactPage() {
       email: t('info.email'),
       hours: t('info.hours'),
     },
-    // {
-    //   name: 'North Branch',
-    //   address: '456 Property Lane, North District, City 10002',
-    //   phone: '+1 (123) 456-7891',
-    //   email: 'north@estatepro.com',
-    //   hours: 'Monday - Friday: 9:00 AM - 6:00 PM',
-    // },
-    // {
-    //   name: 'South Branch',
-    //   address: '789 Home Street, South District, City 10003',
-    //   phone: '+1 (123) 456-7892',
-    //   email: 'south@estatepro.com',
-    //   hours: 'Monday - Friday: 9:00 AM - 6:00 PM',
-    // },
   ];
 
   // Handle form input changes
@@ -408,7 +395,7 @@ export default function ContactPage() {
           </div>
         </section>
       </div>
-      <Testimonials sectionTitle={t('testimonials.title')} />
+      <Testimonials sectionTitle={tTestimonials('title')} />
     </>
   );
 }

@@ -1,0 +1,84 @@
+{
+  "title": "Say Something About Us",
+  "subtitle": "Your feedback helps us improve our services for you and future clients.",
+  "aboutYou": "About You",
+  "experience": "Your Experience",
+  "feedback": "Your Feedback",
+  "additionalInfo": "Additional Information",
+  "form": {
+    "name": "What is your full name?",
+    "namePlaceholder": "Enter your full name",
+    "phone": "What is your phone number?",
+    "phonePlaceholder": "e.g. 0555555555",
+    "role": "What is your role?",
+    "roleOptions": {
+      "investor": "Investor",
+      "firstTimeBuyer": "First-Time Buyer",
+      "developer": "Developer",
+      "realEstateEnthusiast": "Real Estate Enthusiast",
+      "other": "Other"
+    },
+    "satisfaction": "How was your experience with us?",
+    "satisfied": "Satisfied",
+    "notSatisfied": "Not Satisfied",
+    "recommendation": "How likely are you to recommend us?",
+    "notLikely": "Not Likely",
+    "veryLikely": "Very Likely",
+    "testimonial": "Share your testimonial",
+    "testimonialPlaceholder": "What did you like about our service? How did we help you?",
+    "purpose": "Purpose of using our platform",
+    "purposeOptions": {
+      "buy": "Buying a property",
+      "sell": "Selling a property",
+      "auction": "Participating in an auction",
+      "browsing": "Just browsing"
+    },
+    "returning": "Will you use our platform again?",
+    "returningOptions": {
+      "yes": "Yes",
+      "maybe": "Maybe",
+      "no": "No"
+    },
+    "improvement": "Suggestions for improvement (optional)",
+    "improvementPlaceholder": "What can we do better? Your suggestions help us improve.",
+    "avatar": "Upload your photo (optional)",
+    "uploadText": "Click to upload your photo",
+    "fileSelected": "File selected:",
+    "clickToChange": "Click to change",
+    "charactersCount": "characters",
+    "addMoreDetails": "(Consider adding more details for a helpful testimonial)",
+    "selectRole": "Select role",
+    "optional": "Optional",
+    "validationError": "Please fill your name, satisfaction level, and a short message before submitting."
+  },
+  "navigation": {
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit Feedback",
+    "submitting": "Submitting..."
+  },
+  "progress": {
+    "of": "of",
+    "complete": "Complete"
+  },
+  "quickFeedback": {
+    "title": "In a hurry? Submit your essential feedback now!",
+    "description": "We will use only your name, satisfaction level, and testimonial message.",
+    "submit": "Quick Submit"
+  },
+  "thankYou": {
+    "title": "Thank You!",
+    "message": "Your feedback is very valuable to us. We appreciate your time in sharing your thoughts.",
+    "achievement": "You helped us improve our service!",
+    "backHome": "Back to Home"
+  },
+  "slider": {
+    "title": "What People Say",
+    "subtitle": "Real feedback from our valued clients",
+    "satisfaction": "Satisfaction:",
+    "rating": "Rating:",
+    "loading": "Loading awesome testimonials...",
+    "error": "Unable to load testimonials at the moment",
+    "tryAgain": "Try Again"
+  }
+}

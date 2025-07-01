@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface TestimonialHeaderProps {
   sectionTitle: string;
 }
 
 const TestimonialHeader: React.FC<TestimonialHeaderProps> = ({ sectionTitle }) => {
+  const t = useTranslations('testimonials');
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: -30 }}
@@ -36,7 +39,7 @@ const TestimonialHeader: React.FC<TestimonialHeaderProps> = ({ sectionTitle }) =
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.5 }}
       >
-        Your feedback helps us improve our services for you and future clients.
+        {t('subtitle')}
       </motion.p>
     </motion.div>
   );

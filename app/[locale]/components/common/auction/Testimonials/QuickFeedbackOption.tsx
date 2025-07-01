@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import { Heart, Zap } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface QuickFeedbackOptionProps {
   onQuickSubmit: () => void;
 }
 
 const QuickFeedbackOption: React.FC<QuickFeedbackOptionProps> = ({ onQuickSubmit }) => {
+  const t = useTranslations('testimonials.quickFeedback');
+  
   return (
     <motion.div 
       initial={{ opacity: 0, height: 0 }}
@@ -30,8 +33,8 @@ const QuickFeedbackOption: React.FC<QuickFeedbackOptionProps> = ({ onQuickSubmit
             <Heart className="h-5 w-5 text-pink-500 fill-pink-500" />
           </motion.div>
           <div>
-            <p className="text-sm font-medium text-gray-700">In a hurry? Submit your essential feedback now!</p>
-            <p className="text-xs text-gray-500 mt-1">We&apos;ll only use your name, satisfaction level, and testimonial message.</p>
+            <p className="text-sm font-medium text-gray-700">{t('title')}</p>
+            <p className="text-xs text-gray-500 mt-1">{t('description')}</p>
           </div>
         </div>
         
@@ -43,7 +46,7 @@ const QuickFeedbackOption: React.FC<QuickFeedbackOptionProps> = ({ onQuickSubmit
           whileTap={{ scale: 0.95 }}
         >
           <Zap className="h-4 w-4 mr-1" />
-          <span>Quick Submit</span>
+          <span>{t('submit')}</span>
         </motion.button>
       </div>
     </motion.div>

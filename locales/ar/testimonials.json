@@ -1,0 +1,84 @@
+{
+  "title": "قل شيئاً عنا",
+  "subtitle": "ملاحظاتك تساعدنا على تحسين خدماتنا لك وللعملاء المستقبليين.",
+  "aboutYou": "عنك",
+  "experience": "تجربتك",
+  "feedback": "ملاحظاتك",
+  "additionalInfo": "معلومات إضافية",
+  "form": {
+    "name": "ما هو اسمك الكامل؟",
+    "namePlaceholder": "أدخل اسمك الكامل",
+    "phone": "ما هو رقمك؟",
+    "phonePlaceholder": "مثال: 0555555555",
+    "role": "ما هو دورك؟",
+    "roleOptions": {
+      "investor": "مستثمر",
+      "firstTimeBuyer": "مشتري لأول مرة",
+      "developer": "مطور",
+      "realEstateEnthusiast": "مهتم بالعقارات",
+      "other": "أخرى"
+    },
+    "satisfaction": "كيف كانت تجربتك معنا؟",
+    "satisfied": "راضي",
+    "notSatisfied": "غير راضي",
+    "recommendation": "ما مدى احتمالية توصيتك لنا؟",
+    "notLikely": "غير محتمل",
+    "veryLikely": "محتمل جداً",
+    "testimonial": "شارك شهادتك",
+    "testimonialPlaceholder": "ما الذي أعجبك في خدمتنا؟ كيف ساعدتك؟",
+    "purpose": "الغرض من استخدام منصتنا",
+    "purposeOptions": {
+      "buy": "شراء عقار",
+      "sell": "بيع عقار",
+      "auction": "المشاركة في مزاد",
+      "browsing": "مجرد تصفح"
+    },
+    "returning": "هل ستستخدم منصتنا مرة أخرى؟",
+    "returningOptions": {
+      "yes": "نعم",
+      "maybe": "ربما",
+      "no": "لا"
+    },
+    "improvement": "اقتراحات للتحسين (اختياري)",
+    "improvementPlaceholder": "ما الذي يمكننا فعله بشكل أفضل؟ اقتراحاتك تساعدنا في التحسين.",
+    "avatar": "ارفع صورتك الشخصية (اختياري)",
+    "uploadText": "انقر لرفع صورتك",
+    "fileSelected": "تم اختيار الملف:",
+    "clickToChange": "انقر للتغيير",
+    "charactersCount": "عدد الأحرف",
+    "addMoreDetails": "(فكر في إضافة المزيد من التفاصيل لشهادة مفيدة)",
+    "selectRole": "اختر دور",
+    "optional": "اختياري",
+    "validationError": "يرجى ملء اسمك ومستوى رضاك ورسالة مختصرة قبل الإرسال."
+  },
+  "navigation": {
+    "back": "رجوع",
+    "next": "التالي",
+    "submit": "إرسال الملاحظات",
+    "submitting": "جاري الإرسال..."
+  },
+  "progress": {
+    "of": "من",
+    "complete": "مكتمل"
+  },
+  "quickFeedback": {
+    "title": "في عجلة من أمرك؟ أرسل ملاحظاتك الأساسية الآن!",
+    "description": "سنستخدم فقط اسمك ومستوى رضاك ورسالة الشهادة.",
+    "submit": "إرسال سريع"
+  },
+  "thankYou": {
+    "title": "شكراً لك!",
+    "message": "ملاحظاتك قيمة جداً بالنسبة لنا. نقدر وقتك في مشاركة أفكارك.",
+    "achievement": "لقد ساعدتنا في تحسين خدمتنا!",
+    "backHome": "العودة للرئيسية"
+  },
+  "slider": {
+    "title": "ما يقوله الناس",
+    "subtitle": "ملاحظات حقيقية من عملائنا الكرام",
+    "satisfaction": "الرضا:",
+    "rating": "التقييم:",
+    "loading": "جاري تحميل الشهادات الرائعة...",
+    "error": "غير قادر على تحميل الشهادات في الوقت الحالي",
+    "tryAgain": "حاول مرة أخرى"
+  }
+}

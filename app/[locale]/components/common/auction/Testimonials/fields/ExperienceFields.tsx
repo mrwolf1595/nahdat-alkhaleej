@@ -16,7 +16,7 @@ const ExperienceFields: React.FC<ExperienceFieldsProps> = ({
   handleRecommendationChange,
   incrementInteraction
 }) => {
-  const t = useTranslations('testimonials');
+  const t = useTranslations('testimonials.form');
 
   const handleSatisfactionSelect = (value: string) => {
     handleSatisfactionChange(value);
@@ -37,7 +37,7 @@ const ExperienceFields: React.FC<ExperienceFieldsProps> = ({
         transition={{ duration: 0.5 }}
       >
         <label className="block text-sm font-medium text-gray-700">
-          {t('form.satisfaction')}
+          {t('satisfaction')}
           <span className="text-red-500 ml-1">*</span>
         </label>
         <div className="flex justify-center gap-6">
@@ -60,7 +60,7 @@ const ExperienceFields: React.FC<ExperienceFieldsProps> = ({
             >
               <Smile className={`h-12 w-12 ${formData.satisfaction === 'Satisfied' ? 'text-green-500' : 'text-gray-400'}`} />
             </motion.div>
-            <span className="mt-3 font-medium">{t('form.satisfied')}</span>
+            <span className="mt-3 font-medium">{t('satisfied')}</span>
           </motion.button>
           
           <motion.button
@@ -82,7 +82,7 @@ const ExperienceFields: React.FC<ExperienceFieldsProps> = ({
             >
               <Frown className={`h-12 w-12 ${formData.satisfaction === 'Not Satisfied' ? 'text-red-500' : 'text-gray-400'}`} />
             </motion.div>
-            <span className="mt-3 font-medium">{t('form.notSatisfied')}</span>
+            <span className="mt-3 font-medium">{t('notSatisfied')}</span>
           </motion.button>
         </div>
       </motion.div>
@@ -93,11 +93,11 @@ const ExperienceFields: React.FC<ExperienceFieldsProps> = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <label className="block text-sm font-medium text-gray-700">{t('form.recommendation')}</label>
+        <label className="block text-sm font-medium text-gray-700">{t('recommendation')}</label>
         <div className="space-y-3">
           <div className="flex justify-between items-center text-sm">
-            <span className="text-gray-500">{t('form.notLikely')}</span>
-            <span className="text-gray-500">{t('form.veryLikely')}</span>
+            <span className="text-gray-500">{t('notLikely')}</span>
+            <span className="text-gray-500">{t('veryLikely')}</span>
           </div>
           <div className="flex justify-between">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (

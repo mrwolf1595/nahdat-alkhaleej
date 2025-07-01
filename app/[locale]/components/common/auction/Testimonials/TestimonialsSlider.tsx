@@ -16,6 +16,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 interface Testimonial {
   _id: string;
@@ -32,6 +33,7 @@ interface Props {
 
 export default function TestimonialsSlider({ testimonials }: Props) {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const t = useTranslations('testimonials.slider');
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-blue-50 dark:from-gray-950 dark:to-gray-900">
@@ -45,12 +47,12 @@ export default function TestimonialsSlider({ testimonials }: Props) {
           <div className="flex items-center justify-center mb-3">
             <Sparkles className="text-blue-500 w-6 h-6 mr-2" />
             <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              What People Are Saying
+              {t('title')}
             </h2>
             <Sparkles className="text-blue-500 w-6 h-6 ml-2" />
           </div>
           <p className="text-gray-600 dark:text-gray-300 text-lg">
-            Real feedback from our valued users
+            {t('subtitle')}
           </p>
         </motion.div>
 
@@ -154,7 +156,7 @@ export default function TestimonialsSlider({ testimonials }: Props) {
                     transition={{ delay: 0.5 }}
                   >
                     <span className="font-medium text-gray-600 dark:text-gray-400 mr-2">
-                      Satisfaction:
+                      {t('satisfaction')}
                     </span>
                     {testimonial.satisfaction === 'Satisfied' ? (
                       <div className="flex items-center bg-green-100 dark:bg-green-900/30 px-3 py-1 rounded-full">
@@ -183,7 +185,7 @@ export default function TestimonialsSlider({ testimonials }: Props) {
                     transition={{ delay: 0.6 }}
                   >
                     <span className="text-sm font-medium text-gray-600 dark:text-gray-400 mr-2">
-                      Rating:
+                      {t('rating')}
                     </span>
                     <div className="flex items-center gap-1">
                       {[...Array(10)].map((_, i) => (

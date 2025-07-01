@@ -16,7 +16,7 @@ const FeedbackFields: React.FC<FeedbackFieldsProps> = ({
   handleUseCaseChange,
   incrementInteraction
 }) => {
-  const t = useTranslations('testimonials');
+  const t = useTranslations('testimonials.form');
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     handleChange(e);
@@ -29,10 +29,10 @@ const FeedbackFields: React.FC<FeedbackFieldsProps> = ({
   };
 
   const purposeOptions = [
-    { id: 'Buy', label: t('form.purposeOptions.buy') },
-    { id: 'Sell', label: t('form.purposeOptions.sell') },
-    { id: 'Auction', label: t('form.purposeOptions.auction') },
-    { id: 'Browsing', label: t('form.purposeOptions.browsing') }
+    { id: 'Buy', label: t('purposeOptions.buy') },
+    { id: 'Sell', label: t('purposeOptions.sell') },
+    { id: 'Auction', label: t('purposeOptions.auction') },
+    { id: 'Browsing', label: t('purposeOptions.browsing') }
   ];
 
   return (
@@ -44,7 +44,7 @@ const FeedbackFields: React.FC<FeedbackFieldsProps> = ({
         transition={{ duration: 0.5 }}
       >
         <label className="block text-sm font-medium text-gray-700">
-          {t('form.testimonial')}
+          {t('testimonial')}
           <span className="text-red-500 ml-1">*</span>
         </label>
         <textarea
@@ -53,7 +53,7 @@ const FeedbackFields: React.FC<FeedbackFieldsProps> = ({
           onChange={handleInputChange}
           required
           className="input w-full p-4 border border-gray-300 rounded-lg min-h-[120px] focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm hover:border-blue-300"
-          placeholder={t('form.testimonialPlaceholder')}
+          placeholder={t('testimonialPlaceholder')}
         />
         
         {/* Character count indicator */}
@@ -63,10 +63,10 @@ const FeedbackFields: React.FC<FeedbackFieldsProps> = ({
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          {formData.message.length} {t('form.charactersCount')}
+          {formData.message.length} {t('charactersCount')}
           {formData.message.length > 0 && formData.message.length < 20 && (
             <span className="text-yellow-600 ml-1">
-              {t('form.addMoreDetails')}
+              {t('addMoreDetails')}
             </span>
           )}
         </motion.div>
@@ -78,7 +78,7 @@ const FeedbackFields: React.FC<FeedbackFieldsProps> = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <label className="block text-sm font-medium text-gray-700">{t('form.purpose')}</label>
+        <label className="block text-sm font-medium text-gray-700">{t('purpose')}</label>
         <div className="grid grid-cols-2 gap-3">
           {purposeOptions.map((purpose, index) => (
             <motion.button
