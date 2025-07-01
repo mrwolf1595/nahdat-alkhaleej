@@ -12,7 +12,7 @@ import { useTranslations, useLocale } from 'next-intl';
 const Navbar: React.FC = () => {
   const t = useTranslations('common');
   const locale = useLocale();
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, mounted } = useTheme(); // إضافة mounted
   const [open, setOpen] = useState<boolean>(false);
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -21,6 +21,7 @@ const Navbar: React.FC = () => {
   console.log('Current locale in Navbar:', locale);
   console.log('Current pathname:', pathname);
   console.log('Translation function available:', !!t);
+  console.log('Theme mounted:', mounted, 'Current theme:', theme); // إضافة debug للثيم
   
   try {
     console.log('Sample translation:', t('offers'));
@@ -49,6 +50,34 @@ const Navbar: React.FC = () => {
   const getLocalizedHref = (path: string) => {
     return `/${locale}${path}`;
   };
+
+  // منع الرندر قبل التأكد من تحميل الثيم
+  if (!mounted) {
+    return (
+      <header className="w-full sticky top-0 z-50 transition-all duration-300 bg-blue-950/80"
+      style={{ maxHeight: '70px' }}>
+        <div className="w-full bg-gradient-to-b from-blue-950 via-blue-950/80 to-transparent"
+        style={{ minHeight: '20px' }}>
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between h-16">
+              {/* Loading placeholder */}
+              <div className="flex-shrink-0">
+                <div className="h-8 w-32 bg-gray-300 animate-pulse rounded"></div>
+              </div>
+              <div className="hidden md:flex items-center space-x-6">
+                <div className="h-4 w-16 bg-gray-300 animate-pulse rounded"></div>
+                <div className="h-4 w-16 bg-gray-300 animate-pulse rounded"></div>
+                <div className="h-4 w-16 bg-gray-300 animate-pulse rounded"></div>
+              </div>
+              <div className="md:hidden">
+                <div className="h-6 w-6 bg-gray-300 animate-pulse rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header className={`w-full sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-blue-950/80' : ''}`}

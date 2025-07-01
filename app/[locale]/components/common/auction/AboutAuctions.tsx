@@ -28,7 +28,7 @@ export default function AboutAuctions() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
@@ -50,7 +50,7 @@ export default function AboutAuctions() {
             {t('title')}
           </h2>
           <div className="w-36 h-2 bg-gradient-to-r from-indigo-500 via-blue-500 to-purple-500 mx-auto mb-7 rounded-full"></div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
+          <p className="text-xl max-w-3xl mx-auto font-light">
             {t('subtitle')}
           </p>
         </motion.div>
@@ -63,7 +63,7 @@ export default function AboutAuctions() {
             variants={fadeInUp}
             whileHover="hover"
             animate="rest"
-            className="flex flex-col items-center text-center bg-gradient-to-br from-white to-blue-50 p-10 rounded-3xl shadow-lg border border-blue-100/50 transition-all"
+            className="flex flex-col items-center text-center p-10 rounded-3xl shadow-lg border border-blue-100/50 transition-all"
           >
             <motion.div 
               className="bg-blue-100 p-5 rounded-2xl mb-6 relative overflow-hidden"
@@ -74,11 +74,11 @@ export default function AboutAuctions() {
               </motion.div>
               <div className="absolute inset-0 bg-blue-200 rounded-2xl mix-blend-multiply filter blur-md opacity-30"></div>
             </motion.div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
               {t('premiumOpportunities.title')}
               <Sparkles size={18} className="text-blue-500" />
             </h3>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            <p className="text-lg md:text-xl leading-relaxed">
               {t('premiumOpportunities.description')}
             </p>
           </motion.div>
@@ -90,7 +90,7 @@ export default function AboutAuctions() {
             variants={fadeInUp}
             whileHover="hover"
             animate="rest"
-            className="flex flex-col items-center text-center bg-gradient-to-br from-white to-amber-50 p-10 rounded-3xl shadow-lg border border-amber-100/50 transition-all"
+            className="flex flex-col items-center text-center p-10 rounded-3xl shadow-lg border border-amber-100/50 transition-all"
           >
             <motion.div 
               className="bg-amber-100 p-5 rounded-2xl mb-6 relative overflow-hidden"
@@ -101,11 +101,11 @@ export default function AboutAuctions() {
               </motion.div>
               <div className="absolute inset-0 bg-amber-200 rounded-2xl mix-blend-multiply filter blur-md opacity-30"></div>
             </motion.div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <h3 className="text-2xl font-bold  mb-4 flex items-center gap-2">
               {t('rigorousDueDiligence.title')}
               <CheckCircle size={18} className="text-amber-500" />
             </h3>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            <p className="text-lg md:text-xl leading-relaxed">
               {t('rigorousDueDiligence.description')}
             </p>
           </motion.div>
@@ -117,7 +117,7 @@ export default function AboutAuctions() {
             variants={fadeInUp}
             whileHover="hover"
             animate="rest"
-            className="flex flex-col items-center text-center bg-gradient-to-br from-white to-purple-50 p-10 rounded-3xl shadow-lg border border-purple-100/50 transition-all"
+            className="flex flex-col items-center text-center p-10 rounded-3xl shadow-lg border border-purple-100/50 transition-all"
           >
             <motion.div 
               className="bg-purple-100 p-5 rounded-2xl mb-6 relative overflow-hidden"
@@ -128,11 +128,11 @@ export default function AboutAuctions() {
               </motion.div>
               <div className="absolute inset-0 bg-purple-200 rounded-2xl mix-blend-multiply filter blur-md opacity-30"></div>
             </motion.div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
               {t('discoverOpportunities.title')}
               <Sparkles size={18} className="text-purple-500" />
             </h3>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            <p className="text-lg md:text-xl leading-relaxed">
               {t('discoverOpportunities.description')}
             </p>
           </motion.div>

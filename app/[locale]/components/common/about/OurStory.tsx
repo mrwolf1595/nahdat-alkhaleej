@@ -23,7 +23,7 @@ const OurStory: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-slate-50">
+    <section className="py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <SectionTitle 
@@ -33,7 +33,7 @@ const OurStory: React.FC = () => {
             {t('title')}
           </SectionTitle>
           
-          <div className="prose prose-lg mx-auto space-y-8 text-gray-700">
+          <div className="prose prose-lg mx-auto space-y-8">
             <motion.p
               variants={paragraphVariants}
               initial="hidden"

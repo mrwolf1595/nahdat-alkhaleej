@@ -82,7 +82,7 @@ export default function RecordsPage() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen">
+    <div className=" min-h-screen">
       <HeroRecords />
       <motion.section 
         className="px-4 md:px-8 lg:px-16 py-10 space-y-6"

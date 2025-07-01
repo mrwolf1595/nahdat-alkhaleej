@@ -42,7 +42,7 @@ const AboutYouFields: React.FC<AboutYouFieldsProps> = ({
         initial="hidden"
         animate="visible"
       >
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium">
           {t('name')}
           <span className="text-red-500 ml-1">*</span>
         </label>
@@ -63,7 +63,7 @@ const AboutYouFields: React.FC<AboutYouFieldsProps> = ({
         initial="hidden"
         animate="visible"
       >
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium ">
           {t('phone')}
           <span className="text-red-500 ml-1">*</span>
         </label>
@@ -84,7 +84,7 @@ const AboutYouFields: React.FC<AboutYouFieldsProps> = ({
         initial="hidden"
         animate="visible"
       >
-        <label className="block text-sm font-medium text-gray-700">{t('role')}</label>
+        <label className="block text-sm font-medium ">{t('role')}</label>
         <select 
           name="role" 
           value={formData.role} 

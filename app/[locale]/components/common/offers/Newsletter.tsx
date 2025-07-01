@@ -29,13 +29,8 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-50 to-gray-100 relative overflow-hidden">
-      {/* Background patterns */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 ltr:left-0 rtl:right-0 w-64 h-64 bg-blue-50 rounded-full transform ltr:translate-x-12 rtl:-translate-x-12 translate-y-12"></div>
-        <div className="absolute top-0 ltr:right-0 rtl:left-0 w-96 h-96 bg-indigo-50 rounded-full transform ltr:-translate-x-1/2 rtl:translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 ltr:left-1/4 rtl:right-1/4 w-80 h-80 bg-blue-50 rounded-full transform translate-y-1/2"></div>
-      </div>
+    <section className="py-16 bg-gray-50 relative">
+      {/* تم إزالة جميع الدوائر الزرقاء من الخلفية */}
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 

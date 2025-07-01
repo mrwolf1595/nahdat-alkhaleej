@@ -32,7 +32,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ teamMembers }) => {
   };
 
   return (
-    <section id="team" className="py-24 bg-gradient-to-b from-slate-50 via-indigo-50 to-slate-100 relative overflow-hidden">
+    <section id="team" className="py-24 relative overflow-hidden">
       {/* Decorative elements */}
       <motion.div
         initial={{ opacity: 0, x: -100 }}

@@ -41,7 +41,7 @@ const OurValues: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 via-indigo-50 to-blue-50 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
       {/* Decorative elements */}
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}

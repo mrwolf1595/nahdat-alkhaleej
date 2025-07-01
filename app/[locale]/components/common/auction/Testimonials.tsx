@@ -168,7 +168,7 @@ export default function TestimonialsComponent({ sectionTitle }: TestimonialsProp
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-50 to-blue-50">
+    <section className="py-16">
       <div className="max-w-2xl mx-auto px-4">
         <TestimonialHeader sectionTitle={sectionTitle} />
 
@@ -178,7 +178,7 @@ export default function TestimonialsComponent({ sectionTitle }: TestimonialsProp
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100"
+            className="rounded-xl shadow-lg p-6 md:p-8 border border-gray-100"
           >
             <ProgressBar 
               currentStep={step + 1} 
@@ -188,7 +188,7 @@ export default function TestimonialsComponent({ sectionTitle }: TestimonialsProp
 
             <form onSubmit={handleSubmit}>
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                <h3 className="text-xl font-bold mb-4 flex items-center">
                   {stepConfig[step].label}
                   {step === 0 && (
                     <span className="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">

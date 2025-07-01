@@ -86,37 +86,7 @@ const HeroSlider = () => {
     setTimeout(() => setIsAutoPlaying(true), 8000);
   };
 
-  // LazyImage component for optimized image loading
-  const LazyBackgroundPattern = ({ shape, isVisible }: { shape: string, isVisible: boolean }) => {
-    if (!isVisible) return null;
-
-    if (shape === 'circle-top-right') {
-      return (
-        <div className="absolute inset-0 overflow-hidden opacity-30">
-          <motion.div 
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 0.4 }}
-            transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
-            className="absolute ltr:-right-20 rtl:-left-20 -top-20 w-96 h-96 rounded-full bg-white blur-lg"
-          ></motion.div>
-          <motion.div 
-            initial={{ scale: 1, opacity: 0.2 }}
-            animate={{ scale: 1.2, opacity: 0.5 }}
-            transition={{ duration: 1.8, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
-            className="absolute ltr:left-1/4 rtl:right-1/4 bottom-1/4 w-64 h-64 rounded-full bg-white/40 blur-md"
-          ></motion.div>
-          <motion.div 
-            initial={{ scale: 0.9, opacity: 0.1 }}
-            animate={{ scale: 1.1, opacity: 0.3 }}
-            transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", delay: 0.7 }}
-            className="absolute ltr:left-1/3 rtl:right-1/3 top-1/4 w-32 h-32 rounded-full bg-white/30 blur-sm"
-          ></motion.div>
-        </div>
-      );
-    } 
-    // ... rest of the background patterns remain the same
-    return null;
-  };
+  // LazyImage component for optimized image loading - تم إزالة الدوائر البيضاء
 
   // Lazy-loaded icon component
   const SlideIcon = lazy(() => {
@@ -171,7 +141,7 @@ const HeroSlider = () => {
                     visibility: index === currentSlide ? 'visible' : 'hidden' 
                   }}
                 >
-                  {index === currentSlide && <LazyBackgroundPattern shape={slide.shape} isVisible={index === currentSlide} />}
+                  {/* تم إزالة عرض الدوائر البيضاء تماماً */}
                 </div>
               </motion.div>
             )

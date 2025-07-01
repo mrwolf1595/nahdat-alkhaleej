@@ -33,7 +33,7 @@ const CompanyMilestones: React.FC = () => {
   return (
     <section className="py-24 relative">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none" />
       
       <div className="container mx-auto px-4 relative z-10">
         <SectionTitle gradient="from-blue-600 to-sky-500">{t('title')}</SectionTitle>
@@ -82,11 +82,11 @@ const CompanyMilestones: React.FC = () => {
                   >
                     {milestone.icon}
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-800">
+                  <h3 className="text-xl font-bold ">
                     {t(`items.${milestone.key}.title`)}
                   </h3>
                 </div>
-                <p className="text-gray-600 leading-relaxed">
+                <p className=" leading-relaxed">
                   {t(`items.${milestone.key}.description`)}
                 </p>
               </motion.div>

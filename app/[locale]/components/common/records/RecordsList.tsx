@@ -48,7 +48,7 @@ const RecordsList: FC<RecordsListProps> = ({ records }) => {
           transition={{ duration: 0.5 }}
           className="flex justify-between items-center mb-10"
         >
-          <h2 className="text-3xl font-bold text-gray-800 flex items-center">
+          <h2 className="text-3xl font-bold flex items-center">
             <span className="mr-2">{t('title')}</span>
             <span className="text-blue-600 text-lg font-medium bg-blue-50 px-3 py-1 rounded-full">
               {records.length} {t('results')}
@@ -56,7 +56,7 @@ const RecordsList: FC<RecordsListProps> = ({ records }) => {
           </h2>
           
           {records.length > 0 && (
-            <div className="flex items-center gap-2 text-gray-500 text-sm">
+            <div className="flex items-center gap-2 text-sm">
               <Calendar size={16} />
               <span>{t('lastUpdated')}</span>
             </div>
@@ -74,8 +74,8 @@ const RecordsList: FC<RecordsListProps> = ({ records }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-700">{t('noRecords.title')}</h3>
-            <p className="text-gray-500 mt-2">{t('noRecords.subtitle')}</p>
+            <h3 className="text-xl font-semibold">{t('noRecords.title')}</h3>
+            <p className=" mt-2">{t('noRecords.subtitle')}</p>
           </motion.div>
         ) : (
           <motion.div 
@@ -117,23 +117,23 @@ const RecordsList: FC<RecordsListProps> = ({ records }) => {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-gray-800 line-clamp-1">{record.property}</h3>
+                  <h3 className="text-xl font-bold mb-2 line-clamp-1">{record.property}</h3>
                   
-                  <div className="flex items-center text-gray-600 mb-4">
+                  <div className="flex items-center  mb-4">
                     <MapPin size={16} className="mr-1 text-blue-500" />
                     <p className="line-clamp-1">{record.location}</p>
                   </div>
 
                   <div className="flex flex-wrap gap-4 my-4">
                     {record.bedrooms && (
-                      <div className="flex items-center text-gray-700">
+                      <div className="flex items-center ">
                         <Bed size={18} className="mr-1 text-blue-500" />
                         <span>{record.bedrooms} {t('beds')}</span>
                       </div>
                     )}
                     
                     {record.bathrooms && (
-                      <div className="flex items-center text-gray-700">
+                      <div className="flex items-center ">
                         <Bath size={18} className="mr-1 text-blue-500" />
                         <span>{record.bathrooms} {t('baths')}</span>
                       </div>

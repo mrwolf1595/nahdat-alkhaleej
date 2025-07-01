@@ -1,43 +1,55 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
 
-type ThemeContextType = { theme: string; toggleTheme: () => void }
+type ThemeContextType = { 
+  theme: string; 
+  toggleTheme: () => void;
+  mounted: boolean; // إضافة حالة للتأكد من تحميل الكومبوننت
+}
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
-import { ReactNode } from 'react'
-
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState('light')
+  const [mounted, setMounted] = useState(false)
 
+  // التحقق من الثيم المحفوظ عند تحميل الكومبوننت
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme) {
+    // التأكد من أننا في المتصفح
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme') || 'light'
       setTheme(savedTheme)
       document.documentElement.classList.toggle('dark', savedTheme === 'dark')
     }
+    setMounted(true)
   }, [])
 
+  // تطبيق التغييرات على الـ DOM عند تغيير الثيم
+  useEffect(() => {
+    if (mounted && typeof window !== 'undefined') {
+      document.documentElement.classList.toggle('dark', theme === 'dark')
+      localStorage.setItem('theme', theme)
+    }
+  }, [theme, mounted])
+
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light'
-    setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
-    document.documentElement.classList.toggle('dark', newTheme === 'dark')
+    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, mounted }}>
       {children}
     </ThemeContext.Provider>
   )
 }
-// ThemeContext.tsx
+
 export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext)
-  if (!context) throw new Error('useTheme must be used within ThemeProvider')
+  if (!context) {
+    throw new Error('useTheme must be used within ThemeProvider')
+  }
   return context
 }
-
 
 export default useTheme

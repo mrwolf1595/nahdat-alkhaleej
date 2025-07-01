@@ -24,7 +24,7 @@ const AboutPage: React.FC = () => {
   return (
     <div className="about-page">
       <HeroSection />
-      <OurStory />
+      <OurStory /> 
       <OurValues />
       <CompanyMilestones />
       {!loading && <TeamSection teamMembers={teamMembers} />}

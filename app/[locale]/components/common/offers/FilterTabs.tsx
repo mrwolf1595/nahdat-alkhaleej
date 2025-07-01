@@ -7,7 +7,7 @@ interface FilterTabsProps {
   setActiveFilter: (filter: string) => void;
 }
 
-const FilterTabs = ({ activeFilter, setActiveFilter }: FilterTabsProps) => {
+const FilterTabs = ({  setActiveFilter }: FilterTabsProps) => {
   const t = useTranslations('offers.filterTabs');
   
   const tabs = [
@@ -29,10 +29,7 @@ const FilterTabs = ({ activeFilter, setActiveFilter }: FilterTabsProps) => {
         <motion.button
           key={tab.id}
           onClick={() => setActiveFilter(tab.id)}
-          className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap
-            ${activeFilter === tab.id 
-              ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg' 
-              : 'bg-white text-gray-700 hover:bg-gray-100 hover:shadow'}`}
+          className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

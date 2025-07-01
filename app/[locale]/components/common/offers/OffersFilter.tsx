@@ -71,9 +71,9 @@ const OffersFilter = ({
   );
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 mb-8 transition-all duration-300">
+    <div className="rounded-2xl shadow-lg p-6 mb-8 transition-all duration-300">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-800">{t('findYourProperty')}</h2>
+        <h2 className="text-2xl font-bold">{t('findYourProperty')}</h2>
         <button 
           onClick={() => setIsExpanded(!isExpanded)}
           className="text-blue-600 hover:text-blue-800 font-medium flex items-center md:hidden"
@@ -98,12 +98,12 @@ const OffersFilter = ({
       >
         {/* Location */}
         <div className="space-y-2">
-          <label className="block text-gray-700 font-medium text-sm mb-1">{t('location')}</label>
+          <label className="block font-medium text-sm mb-1">{t('location')}</label>
           <div className="relative">
             <select
               value={location}
               onChange={(e: ChangeEvent<HTMLSelectElement>) => onLocationChange(e.target.value)}
-              className="w-full px-4 py-3 ltr:pr-10 rtl:pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white text-gray-700 text-base"
+              className="w-full px-4 py-3 ltr:pr-10 rtl:pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white  text-base"
             >
               {locations.map((loc, idx) => (
                 <option key={idx} value={loc}>{loc}</option>
@@ -115,12 +115,12 @@ const OffersFilter = ({
 
         {/* Property Type */}
         <div className="space-y-2">
-          <label className="block text-gray-700 font-medium text-sm mb-1">{t('propertyType')}</label>
+          <label className="block font-medium text-sm mb-1">{t('propertyType')}</label>
           <div className="relative">
             <select
               value={propertyType}
               onChange={(e: ChangeEvent<HTMLSelectElement>) => onPropertyTypeChange(e.target.value)}
-              className="w-full px-4 py-3 ltr:pr-10 rtl:pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white text-gray-700 text-base"
+              className="w-full px-4 py-3 ltr:pr-10 rtl:pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white  text-base"
             >
               {propertyTypes.map((type, idx) => (
                 <option key={idx} value={type.value}>{type.label}</option>
@@ -132,12 +132,12 @@ const OffersFilter = ({
 
         {/* Price Range */}
         <div className="space-y-2">
-          <label className="block text-gray-700 font-medium text-sm mb-1">{t('priceRange')}</label>
+          <label className="block font-medium text-sm mb-1">{t('priceRange')}</label>
           <div className="relative">
             <select
               value={priceRange}
               onChange={(e: ChangeEvent<HTMLSelectElement>) => onPriceRangeChange(e.target.value)}
-              className="w-full px-4 py-3 ltr:pr-10 rtl:pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white text-gray-700 text-base"
+              className="w-full px-4 py-3 ltr:pr-10 rtl:pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white text-base"
             >
               {priceRanges.map((range, idx) => (
                 <option key={idx} value={range}>{range}</option>
