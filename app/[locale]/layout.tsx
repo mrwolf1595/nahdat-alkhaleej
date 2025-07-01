@@ -9,7 +9,7 @@ import WhatsAppButton from './components/common/WhatsAppButton';
 import { NextIntlClientProvider } from 'next-intl';
 
 export const metadata = {
-  title: 'RealEstatePro',
+  title: 'Nahdat Al Khaleej',
   description: 'Latest real estate offers and auctions',
 };
 
