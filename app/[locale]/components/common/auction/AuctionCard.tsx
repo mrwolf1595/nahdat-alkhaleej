@@ -9,7 +9,6 @@ import {
   MapPin,
   Home,
   Bath,
-
   DollarSign,
   Award,
   CheckCircle,
@@ -48,6 +47,7 @@ export default function AuctionCard({ auction, type = 'upcoming' }: AuctionCardP
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
   const t = useTranslations('auctions.auctionCard');
+  const tElapsed = useTranslations('auctions.elapsedTime');
   
   const isSold = type === 'sold' || (type === 'past' && auction.soldPrice && auction.soldPrice !== 'N/A');
   
@@ -197,7 +197,7 @@ export default function AuctionCard({ auction, type = 'upcoming' }: AuctionCardP
             <ElapsedTimer 
               auctionDate={auction.auctionDate}
               auctionTime={auction.auctionTime || '00:00'}
-              title={t('elapsedTime.timeSince')}
+              title={tElapsed('timeSince')}
             />
           </div>
         )}
@@ -217,12 +217,12 @@ export default function AuctionCard({ auction, type = 'upcoming' }: AuctionCardP
                 <span>{auction.bathrooms} {auction.bathrooms === 1 ? t('bath') : t('baths')}</span>
               </div>
             )}
-{auction.area && (
-  <div className="flex items-center">
-    <LandPlot size={16} className="text-gray-500 dark:text-gray-400 flex-shrink-0" />
-    <span className="pl-3">{auction.area}</span>
-  </div>
-)}
+            {auction.area && (
+              <div className="flex items-center">
+                <LandPlot size={16} className="text-gray-500 dark:text-gray-400 flex-shrink-0" />
+                <span className="pl-3">{auction.area}</span>
+              </div>
+            )}
           </div>
         )}
 

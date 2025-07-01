@@ -90,7 +90,7 @@ export default function FeaturedAuctionsList() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
+    <section className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -99,7 +99,7 @@ export default function FeaturedAuctionsList() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium rounded-full text-sm mb-4">
+          <span className="inline-block px-4 py-1.5  text-blue-700  font-medium rounded-full text-sm mb-4">
             {t('badge')}
           </span>
           <h2 
@@ -108,7 +108,7 @@ export default function FeaturedAuctionsList() {
           >
             {t('title')}
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 font-medium max-w-2xl mx-auto">
+          <p className="text-lg font-medium max-w-2xl mx-auto">
             {t('subtitle')}
           </p>
           <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6 rounded-full"></div>
@@ -125,7 +125,7 @@ export default function FeaturedAuctionsList() {
             >
               <div className="flex flex-col items-center">
                 <Loader2 className="w-12 h-12 text-blue-600 animate-spin" aria-label="Loading auctions" />
-                <p className="mt-4 text-gray-600 dark:text-gray-400">{t('loading')}</p>
+                <p className="mt-4">{t('loading')}</p>
               </div>
             </motion.div>
           ) : error ? (
@@ -134,13 +134,13 @@ export default function FeaturedAuctionsList() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="text-center p-8 max-w-md mx-auto bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-100 dark:border-red-900/30"
+              className="text-center p-8 max-w-md mx-auto bg-red-50"
             >
               <AlertCircle className="w-12 h-12 text-red-500 mx-auto mb-4" />
-              <p className="text-red-600 dark:text-red-400 mb-3">{error}</p>
+              <p className="text-red-600  mb-3">{error}</p>
               <button 
                 onClick={() => {setLoading(true); setError(null);}} 
-                className="mt-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+                className="mt-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 "
                 aria-label="Retry loading auctions"
               >
                 Retry
@@ -152,9 +152,9 @@ export default function FeaturedAuctionsList() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="text-center text-gray-500 dark:text-gray-400 py-16"
+              className="text-center py-16"
             >
-              <div className="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-xl max-w-lg mx-auto">
+              <div className=" p-8 rounded-xl max-w-lg mx-auto">
                 <p className="text-xl font-medium mb-4">{t('noAuctions')}</p>
                 <p className="mb-6">{t('checkBack')}</p>
                 <Link 
@@ -194,7 +194,7 @@ export default function FeaturedAuctionsList() {
           >
             <Link 
               href="/auctions" 
-              className="inline-flex items-center px-6 py-3 rounded-full text-base font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all shadow-md hover:shadow-lg dark:shadow-blue-900/20 group"
+              className="inline-flex items-center px-6 py-3 rounded-full text-base font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all shadow-md hover:shadow-lg"
               aria-label={t('viewAll')}
             >
               {t('viewAll')}

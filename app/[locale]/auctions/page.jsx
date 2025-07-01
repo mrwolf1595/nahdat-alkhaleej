@@ -25,10 +25,10 @@ export default function AuctionsPage() {
       >
         <HeroAuctions />
         <AboutAuctions />
-        <FeaturedAuctionsList />
+        <FeaturedAuctionsList /> 
         <AllUpcomingAuctionsList />
         <PastAuctionsList />
-        <Testimonials sectionTitle="auctions.testimonials.title" />
+        <Testimonials sectionTitle="Say Something About Us" />
         <CallToAction />
       </motion.div>
     </Suspense>
