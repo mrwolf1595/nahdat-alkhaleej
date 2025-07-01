@@ -43,7 +43,7 @@ const FeedbackFields: React.FC<FeedbackFieldsProps> = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium ">
           {t('testimonial')}
           <span className="text-red-500 ml-1">*</span>
         </label>
@@ -78,7 +78,7 @@ const FeedbackFields: React.FC<FeedbackFieldsProps> = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <label className="block text-sm font-medium text-gray-700">{t('purpose')}</label>
+        <label className="block text-sm font-medium">{t('purpose')}</label>
         <div className="grid grid-cols-2 gap-3">
           {purposeOptions.map((purpose, index) => (
             <motion.button
@@ -87,7 +87,7 @@ const FeedbackFields: React.FC<FeedbackFieldsProps> = ({
               className={`p-4 rounded-lg border ${
                 formData.useCase === purpose.id
                   ? 'bg-blue-50 border-blue-400 text-blue-700 shadow-md'
-                  : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50'
+                  : 'bg-white border-gray-200 hover:bg-gray-50'
               } transition-all`}
               onClick={() => handleUseCaseSelect(purpose.id)}
               whileHover={{ y: -3, boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}

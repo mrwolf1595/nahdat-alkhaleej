@@ -36,7 +36,7 @@ const ExperienceFields: React.FC<ExperienceFieldsProps> = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium ">
           {t('satisfaction')}
           <span className="text-red-500 ml-1">*</span>
         </label>
@@ -58,7 +58,7 @@ const ExperienceFields: React.FC<ExperienceFieldsProps> = ({
               }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Smile className={`h-12 w-12 ${formData.satisfaction === 'Satisfied' ? 'text-green-500' : 'text-gray-400'}`} />
+              <Smile className={`h-12 w-12 ${formData.satisfaction === 'Satisfied' ? 'text-green-500' : ''}`} />
             </motion.div>
             <span className="mt-3 font-medium">{t('satisfied')}</span>
           </motion.button>
@@ -80,7 +80,7 @@ const ExperienceFields: React.FC<ExperienceFieldsProps> = ({
               }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Frown className={`h-12 w-12 ${formData.satisfaction === 'Not Satisfied' ? 'text-red-500' : 'text-gray-400'}`} />
+              <Frown className={`h-12 w-12 ${formData.satisfaction === 'Not Satisfied' ? 'text-red-500' : ''}`} />
             </motion.div>
             <span className="mt-3 font-medium">{t('notSatisfied')}</span>
           </motion.button>
@@ -93,11 +93,11 @@ const ExperienceFields: React.FC<ExperienceFieldsProps> = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <label className="block text-sm font-medium text-gray-700">{t('recommendation')}</label>
+        <label className="block text-sm font-medium">{t('recommendation')}</label>
         <div className="space-y-3">
           <div className="flex justify-between items-center text-sm">
-            <span className="text-gray-500">{t('notLikely')}</span>
-            <span className="text-gray-500">{t('veryLikely')}</span>
+            <span className="">{t('notLikely')}</span>
+            <span className="">{t('veryLikely')}</span>
           </div>
           <div className="flex justify-between">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
@@ -111,7 +111,7 @@ const ExperienceFields: React.FC<ExperienceFieldsProps> = ({
                       : num <= 7 
                         ? 'bg-yellow-500 text-white' 
                         : 'bg-green-500 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    : 'bg-gray-100  hover:bg-gray-200'
                 } transition-all`}
                 onClick={() => handleRecommendationSelect(num)}
                 whileHover={{ scale: 1.15 }}
