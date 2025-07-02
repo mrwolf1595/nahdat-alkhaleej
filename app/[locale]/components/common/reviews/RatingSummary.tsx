@@ -3,12 +3,14 @@
 import { useEffect, useState } from 'react';
 import { Star, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import useTheme from '../../../context/ThemeContext';
 
 type Props = {
   targetId: string;
 };
 
 export default function RatingSummary({ targetId }: Props) {
+  const { theme } = useTheme();
   const [average, setAverage] = useState<number | null>(null);
   const [count, setCount] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -20,7 +22,7 @@ export default function RatingSummary({ targetId }: Props) {
         const res = await fetch(`/api/public/reviews?targetId=${targetId}`);
         const reviews = await res.json();
 
-        console.log('✅ Reviews:', reviews);
+        console.log('✅ Reviews:', reviews); // راقب الكونسول
 
         if (Array.isArray(reviews) && reviews.length > 0) {
           const total = reviews.reduce((sum, r) => sum + r.rating, 0);
@@ -45,8 +47,10 @@ export default function RatingSummary({ targetId }: Props) {
 
   if (isLoading) {
     return (
-      <div className="flex items-center gap-2 text-sm text-zinc-400 dark:text-gray-400 animate-pulse">
-        <Loader2 size={14} className="animate-spin" />
+      <div className={`flex items-center gap-1 text-sm animate-pulse ${
+        theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
+      }`}>
+        <Loader2 size={14} className="animate-spin opacity-70" />
         <span className="text-xs">Loading ratings...</span>
       </div>
     );
@@ -57,7 +61,7 @@ export default function RatingSummary({ targetId }: Props) {
   // For hover animations
   const starVariants = {
     initial: { scale: 1 },
-    hover: { scale: 1.1, transition: { duration: 0.2 } },
+    hover: { scale: 1.2, rotate: [0, 15, 0, -15, 0], transition: { duration: 0.3 } },
   };
 
   // Format average to one decimal place when needed
@@ -68,24 +72,26 @@ export default function RatingSummary({ targetId }: Props) {
       initial={{ opacity: 0, y: 5 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="flex items-center gap-2"
+      className="flex items-center gap-1"
     >
-      <div className="flex items-center">
+      <div className="flex">
         {[1, 2, 3, 4, 5].map((i) => {
           // Calculate partial fill for each star
           const fill = Math.min(Math.max(average - (i - 1), 0), 1);
           return (
             <motion.div 
               key={i} 
-              className="relative w-4 h-4 inline-flex items-center justify-center"
+              className="relative w-5 h-5 inline-flex items-center justify-center"
               variants={starVariants}
               initial="initial"
               whileHover="hover"
             >
               {/* Background star (empty) */}
               <Star 
-                size={16} 
-                className="absolute text-zinc-200 dark:text-gray-600" 
+                size={18} 
+                className={`absolute ${
+                  theme === 'dark' ? 'text-zinc-700' : 'text-zinc-300'
+                }`}
                 strokeWidth={1.5} 
               />
               
@@ -93,10 +99,10 @@ export default function RatingSummary({ targetId }: Props) {
               {fill > 0 && (
                 <div style={{ width: `${fill * 100}%` }} className="overflow-hidden absolute h-full">
                   <Star 
-                    size={16} 
-                    fill="#F59E0B" 
-                    stroke="#F59E0B" 
-                    className="text-amber-500" 
+                    size={18} 
+                    fill="#FBBF24" 
+                    stroke="#FBBF24" 
+                    className="text-yellow-400" 
                     strokeWidth={1.5} 
                   />
                 </div>
@@ -113,10 +119,14 @@ export default function RatingSummary({ targetId }: Props) {
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-1"
         >
-          <span className="font-medium text-sm text-zinc-800 dark:text-gray-100">
+          <span className={`ml-1 font-medium text-sm ${
+            theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
+          }`}>
             {formattedAverage}
           </span>
-          <span className="text-xs text-zinc-500 dark:text-gray-400">
+          <span className={`text-xs ${
+            theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
+          }`}>
             ({count})
           </span>
         </motion.div>

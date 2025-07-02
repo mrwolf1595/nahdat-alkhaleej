@@ -14,16 +14,18 @@ import NearbyPlaces from '../../components/common/offers/details/NearbyPlaces';
 import ContactAgent from '../../components/common/offers/details/ContactAgent';
 import PropertySummary from '../../components/common/offers/details/PropertySummary';
 import FullscreenGallery from '../../components/common/offers/details/FullscreenGallery';
-import {MobileBottomBar } from '../../components/common/offers/details/FooterActions';
+import { MobileBottomBar } from '../../components/common/offers/details/FooterActions';
 import { LoadingState, NotFoundState } from '../../components/common/offers/details/LoadingNotFound';
 import Testimonials from '../../components/common/auction/Testimonials';
 import ReviewForm from '../../components/common/reviews/ReviewForm';
 import ReviewList from '../../components/common/reviews/ReviewList';
-import YouTubePlayer from '../../components/common/offers/CustomYouTubePlayer'; // Assuming this is the correct path
+import YouTubePlayer from '../../components/common/offers/CustomYouTubePlayer';
 
 import toast from 'react-hot-toast';
+import useTheme from '../../context/ThemeContext';
 
 const OfferDetailsPage = () => {
+  const { theme } = useTheme();
   const { id } = useParams();
   const router = useRouter();
   const t = useTranslations('offers');
@@ -35,13 +37,12 @@ const OfferDetailsPage = () => {
   const [favorited, setFavorited] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [viewMode, setViewMode] = useState('gallery');
-  
-  // Video ID will be extracted from the offer data
 
   useEffect(() => {
     const fetchOffer = async () => {
       try {
         const res = await fetch(`/api/offers/${id}`);
+        if (!res.ok) throw new Error('Failed to fetch offer');
         const data = await res.json();
         setOffer(data);
 
@@ -58,6 +59,7 @@ const OfferDetailsPage = () => {
         }
       } catch (error) {
         console.error('Failed to fetch offer:', error);
+        toast.error('فشل في تحميل العرض');
       } finally {
         setLoading(false);
       }
@@ -108,7 +110,11 @@ const OfferDetailsPage = () => {
   };
 
   return (
-    <div className="min-h-screen text-zinc-900 dark:text-white ">
+    <div className={`min-h-screen transition-colors duration-300 ${
+      theme === 'dark' 
+        ? 'bg-gray-900 text-white' 
+        : 'bg-white text-gray-900'
+    }`}>
       <OfferHeader
         offer={offer}
         isScrolled={isScrolled}
@@ -127,21 +133,22 @@ const OfferDetailsPage = () => {
       />
       
       {/* Video Tour Section - Only show if videoUrl exists in offer data */}
-{offer.videoLinks && offer.videoLinks.length > 0 && (
-  <div className="max-w-full mx-auto px-6 py-6 space-y-6">
-    <div className="flex items-center mb-2">
-      <YoutubeIcon className="text-red-600 mr-2" size={24} />
-      <h2 className="text-xl font-bold">
-        {tOfferId?.('property.videoTour') || 'Video Tour'}
-      </h2>
-    </div>
+      {offer.videoLinks && offer.videoLinks.length > 0 && (
+        <div className="max-w-full mx-auto px-6 py-6 space-y-6">
+          <div className="flex items-center mb-2">
+            <YoutubeIcon className="text-red-600 mr-2" size={24} />
+            <h2 className={`text-xl font-bold ${
+              theme === 'dark' ? 'text-white' : 'text-gray-900'
+            }`}>
+              {tOfferId?.('property.videoTour') || 'Video Tour'}
+            </h2>
+          </div>
 
-    {offer.videoLinks.map((link, index) => (
-      <YouTubePlayer key={index} videoId={link} autoplay={true} />
-    ))}
-  </div>
-)}
-
+          {offer.videoLinks.map((link, index) => (
+            <YouTubePlayer key={index} videoId={link} autoplay={true} />
+          ))}
+        </div>
+      )}
 
       <div className="max-w-full mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-3 gap-10">
         <motion.div
@@ -176,28 +183,32 @@ const OfferDetailsPage = () => {
             />
             <PropertySummary offer={offer} />
             
-            <div className="rounded-xl p-5 border border-blue-200 dark:border-blue-800/50 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/40 dark:to-blue-900/30 shadow-sm hover:shadow-md transition-all duration-300 group">
+            <div className="rounded-xl p-5 border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/30 shadow-sm hover:shadow-md transition-all duration-300 group">
               <div className="flex items-start">
-                <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-500 mr-4 group-hover:scale-110 transition-transform duration-300 relative overflow-hidden">
+                <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 mr-4 group-hover:scale-110 transition-transform duration-300 relative overflow-hidden">
                   <div className="absolute inset-0 bg-blue-200 dark:bg-blue-800/30 scale-0 group-hover:scale-100 rounded-full transition-transform duration-500 origin-bottom"></div>
                   <Clock
                     size={22}
-                    className="relative z-10 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"
+                    className="relative z-10 transition-colors duration-300"
                   />
                 </div>
                 <div>
                   <div className="flex items-center mb-2">
-                    <h4 className="font-semibold text-zinc-800 dark:text-white">
+                    <h4 className={`font-semibold ${
+                      theme === 'dark' ? 'text-white' : 'text-gray-800'
+                    }`}>
                       {tOfferId('limitedTimeOffer.title')}
                     </h4>
                     <span className="ml-2 px-2 py-0.5 text-xs bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 rounded-full">
                       {tOfferId('limitedTimeOffer.expiresSoon')}
                     </span>
                   </div>
-                  <p className="text-sm">
+                  <p className={`text-sm ${
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                  }`}>
                     {tOfferId('limitedTimeOffer.description')}
                   </p>
-                  <button className="mt-3 text-sm text-blue-600 dark:text-blue-600 font-medium flex items-center hover:underline">
+                  <button className="mt-3 text-sm text-blue-600 dark:text-blue-400 font-medium flex items-center hover:underline transition-colors">
                     {tOfferId('limitedTimeOffer.claimOffer')} <span className="ml-1">→</span>
                   </button>
                 </div>
@@ -227,7 +238,6 @@ const OfferDetailsPage = () => {
       </AnimatePresence>
 
 
-
       <MobileBottomBar
         offer={offer}
         favorited={favorited}
@@ -235,19 +245,40 @@ const OfferDetailsPage = () => {
         onLike={handleLike}
       />
       
-      <section className="mt-12 border-t pt-8">
-        <h2 className="text-xl font-bold mb-4">{tOfferId('reviews.customerReviews')}</h2>
+      {/* Reviews Section */}
+      <section className={`max-w-full mx-auto px-6 py-12 border-t transition-colors duration-300 ${
+        theme === 'dark' 
+          ? 'border-gray-700 bg-gray-800' 
+          : 'border-gray-200 bg-gray-50'
+      }`}>
+        <div className="max-w-4xl mx-auto">
+          <h2 className={`text-2xl font-bold mb-8 ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}>
+            {tOfferId('reviews.customerReviews')}
+          </h2>
 
-        <ReviewList targetId={offer._id.toString()} />
+          <div className="space-y-8">
+            <ReviewList targetId={offer._id.toString()} />
 
-        <div className="mt-6">
-          <ReviewForm
-            targetId={offer._id.toString()}
-            targetType="offer"
-            onReviewAdded={() => {
-              // Refresh after adding review
-            }}
-          />
+            <div className={`border-t pt-8 ${
+              theme === 'dark' ? 'border-gray-700' : 'border-gray-200'
+            }`}>
+              <h3 className={`text-lg font-semibold mb-4 ${
+                theme === 'dark' ? 'text-white' : 'text-gray-900'
+              }`}>
+                Leave a Review
+              </h3>
+              <ReviewForm
+                targetId={offer._id.toString()}
+                targetType="offer"
+                onReviewAdded={() => {
+                  // Refresh after adding review
+                  window.location.reload();
+                }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 

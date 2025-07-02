@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Star, Calendar, MessageSquare, Loader2, UserCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import useTheme from '../../../context/ThemeContext';
 
 type Props = {
   targetId: string;
@@ -17,6 +18,7 @@ type Review = {
 };
 
 export default function ReviewList({ targetId }: Props) {
+  const { theme } = useTheme();
   const t = useTranslations('auctionId.reviews.list');
   const sectionsT = useTranslations('auctionId.detail.sections');
   const commonT = useTranslations('auctionId');
@@ -78,7 +80,11 @@ export default function ReviewList({ targetId }: Props) {
     return (
       <div className="flex items-center justify-center py-8">
         <Loader2 className="w-6 h-6 text-indigo-500 animate-spin" />
-        <span className="ml-2 text-zinc-600 dark:text-gray-400">{sectionsT('loadingReviews')}</span>
+        <span className={`ml-2 ${
+          theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+        }`}>
+          {sectionsT('loadingReviews')}
+        </span>
       </div>
     );
   }
@@ -89,12 +95,20 @@ export default function ReviewList({ targetId }: Props) {
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="p-4 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-lg border border-red-200 dark:border-red-800"
+        className={`p-4 rounded-lg ${
+          theme === 'dark' 
+            ? 'bg-red-900/20 text-red-400' 
+            : 'bg-red-50 text-red-600'
+        }`}
       >
         <p>{t('failedToLoad')} {error}</p>
         <button 
           onClick={fetchReviews}
-          className="mt-2 text-sm underline hover:text-red-700 dark:hover:text-red-300 transition-colors"
+          className={`mt-2 text-sm underline ${
+            theme === 'dark' 
+              ? 'hover:text-red-300' 
+              : 'hover:text-red-700'
+          }`}
         >
           {commonT('tryAgain')}
         </button>
@@ -109,11 +123,25 @@ export default function ReviewList({ targetId }: Props) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="p-8 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-800/50 text-center"
+        className={`p-6 border border-dashed rounded-xl text-center transition-colors duration-300 ${
+          theme === 'dark'
+            ? 'border-zinc-700 bg-zinc-800/50'
+            : 'border-zinc-300 bg-zinc-50'
+        }`}
       >
-        <MessageSquare className="w-12 h-12 mx-auto text-zinc-400 dark:text-gray-500 mb-3" />
-        <h3 className="text-lg font-medium text-zinc-700 dark:text-gray-300 mb-1">{sectionsT('noReviews')}</h3>
-        <p className="text-sm text-zinc-500 dark:text-gray-400">{sectionsT('noReviewsMessage')}</p>
+        <MessageSquare className={`w-10 h-10 mx-auto mb-2 ${
+          theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400'
+        }`} />
+        <h3 className={`text-lg font-medium ${
+          theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
+        }`}>
+          {sectionsT('noReviews')}
+        </h3>
+        <p className={`text-sm mt-1 ${
+          theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
+        }`}>
+          {sectionsT('noReviewsMessage')}
+        </p>
       </motion.div>
     );
   }
@@ -125,38 +153,51 @@ export default function ReviewList({ targetId }: Props) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="p-6 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border border-blue-200 dark:border-blue-800 shadow-sm"
+        className={`p-5 rounded-xl border shadow-sm transition-colors duration-300 ${
+          theme === 'dark'
+            ? 'bg-gradient-to-br from-indigo-950/40 to-purple-950/40 border-indigo-900/50'
+            : 'bg-gradient-to-br from-indigo-50 to-purple-50 border-indigo-100'
+        }`}
       >
         <div className="flex items-center gap-4">
-          <div className="rounded-full bg-white dark:bg-gray-800 p-4 shadow-md border border-zinc-200 dark:border-gray-700">
-            <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
+          <div className={`rounded-full p-3 shadow-md ${
+            theme === 'dark' ? 'bg-zinc-800' : 'bg-white'
+          }`}>
+            <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
               {averageRating}
             </div>
           </div>
           <div>
-            <h3 className="font-semibold text-zinc-800 dark:text-gray-200 mb-1">{t('averageRating')}</h3>
-            <div className="flex items-center">
+            <h3 className={`font-medium ${
+              theme === 'dark' ? 'text-zinc-200' : 'text-zinc-800'
+            }`}>
+              {t('averageRating')}
+            </h3>
+            <div className="flex items-center mt-1">
               {Array(5).fill(null).map((_, i) => {
+                // Calculate partial fill for the last star
                 const fill = Math.min(Math.max(Number(averageRating) - i, 0), 1);
                 return (
                   <div key={i} className="relative w-5 h-5">
                     <Star 
                       size={20}
-                      className="text-zinc-200 dark:text-gray-600 absolute top-0 left-0"
+                      className={theme === 'dark' ? 'text-zinc-700' : 'text-zinc-300'}
                     />
                     {fill > 0 && (
                       <div style={{ width: `${fill * 100}%` }} className="overflow-hidden absolute top-0 left-0 h-full">
                         <Star 
                           size={20}
-                          fill="#F59E0B"
-                          className="text-amber-500"
+                          fill="#FBBF24"
+                          className="text-yellow-400"
                         />
                       </div>
                     )}
                   </div>
                 );
               })}
-              <span className="ml-2 text-sm text-zinc-600 dark:text-gray-400">
+              <span className={`ml-2 text-sm ${
+                theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+              }`}>
                 ({reviews.length} {reviews.length === 1 ? t('review') : t('reviews')})
               </span>
             </div>
@@ -171,31 +212,46 @@ export default function ReviewList({ targetId }: Props) {
         animate="show"
         className="space-y-4"
       >
-        {sortedReviews.map((review) => (
+        {sortedReviews.map((review, index) => (
           <motion.div 
             key={review._id}
             variants={item}
-            className="p-5 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-all duration-200"
+            className={`p-5 border rounded-xl backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-200 ${
+              theme === 'dark'
+                ? 'border-zinc-700 bg-zinc-800/80'
+                : 'border-zinc-200 bg-white'
+            }`}
+            style={{ 
+              transitionDelay: `${index * 50}ms`,
+            }}
           >
            <div className="flex justify-between items-start">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-blue-900/50 dark:to-indigo-900/50 flex items-center justify-center border border-indigo-200 dark:border-blue-800">
-                  <UserCircle2 className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                  theme === 'dark'
+                    ? 'bg-gradient-to-br from-indigo-900 to-purple-900'
+                    : 'bg-gradient-to-br from-indigo-100 to-purple-100'
+                }`}>
+                  <UserCircle2 className={`w-6 h-6 ${
+                    theme === 'dark' ? 'text-indigo-400' : 'text-indigo-600'
+                  }`} />
                 </div>
                 <div>
-                  <div className="flex items-center gap-1 mb-1">
+                  <div className="flex items-center gap-1">
                     {Array(5).fill(null).map((_, i) => (
                       <Star 
                         key={i}
                         size={16}
                         fill={i < review.rating ? '#FBBF24' : 'transparent'}
-                        stroke={i < review.rating ? '#FBBF24' : '#D1D5DB'}
+                        stroke={i < review.rating ? '#FBBF24' : theme === 'dark' ? '#4B5563' : '#94A3B8'}
                         strokeWidth={1.5}
-                        className={i < review.rating ? 'text-amber-500' : 'text-zinc-300 dark:text-gray-500'}
+                        className={i < review.rating ? 'text-yellow-400' : theme === 'dark' ? 'text-zinc-600' : 'text-zinc-300'}
                       />
                     ))}
                   </div>
-                  <p className="text-xs flex items-center gap-1 text-gray-500 dark:text-gray-400">
+                  <p className={`text-xs flex items-center gap-1 mt-1 ${
+                    theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
+                  }`}>
                     <Calendar size={12} />
                     <span>{new Date(review.createdAt).toLocaleDateString(undefined, { 
                       year: 'numeric', 
@@ -212,11 +268,17 @@ export default function ReviewList({ targetId }: Props) {
                 <motion.div 
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
-                  className="mt-4 pl-13"
+                  className="mt-3 pl-11"
                 >
                   <div className="relative">
-                    <div className="absolute top-0 bottom-0 left-0 w-1 bg-indigo-100 dark:bg-indigo-900/50 rounded-full" />
-                    <p className="pl-4 text-sm text-zinc-700 dark:text-gray-300 leading-relaxed">{review.comment}</p>
+                    <div className={`absolute top-0 bottom-0 left-0 w-1 rounded-full ${
+                      theme === 'dark' ? 'bg-indigo-900/50' : 'bg-indigo-100'
+                    }`} />
+                    <p className={`pl-4 text-sm leading-relaxed ${
+                      theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
+                    }`}>
+                      {review.comment}
+                    </p>
                   </div>
                 </motion.div>
               )}
