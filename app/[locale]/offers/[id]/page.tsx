@@ -14,7 +14,7 @@ import NearbyPlaces from '../../components/common/offers/details/NearbyPlaces';
 import ContactAgent from '../../components/common/offers/details/ContactAgent';
 import PropertySummary from '../../components/common/offers/details/PropertySummary';
 import FullscreenGallery from '../../components/common/offers/details/FullscreenGallery';
-import {FloatingActions, MobileBottomBar } from '../../components/common/offers/details/FooterActions';
+import {MobileBottomBar } from '../../components/common/offers/details/FooterActions';
 import { LoadingState, NotFoundState } from '../../components/common/offers/details/LoadingNotFound';
 import Testimonials from '../../components/common/auction/Testimonials';
 import ReviewForm from '../../components/common/reviews/ReviewForm';
@@ -226,10 +226,7 @@ const OfferDetailsPage = () => {
         )}
       </AnimatePresence>
 
-      <FloatingActions
-        favorited={favorited}
-        onFavoriteToggle={favorited ? undefined : handleLike}
-      />
+
 
       <MobileBottomBar
         offer={offer}

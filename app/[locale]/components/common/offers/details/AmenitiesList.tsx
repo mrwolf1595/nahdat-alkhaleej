@@ -10,22 +10,7 @@ amenities: string[];
 }
 
 const AmenitiesList = ({ amenities }: AmenitiesListProps) => {
-const [isDarkMode, setIsDarkMode] = useState(false);
 const tOfferId = useTranslations('offerId');
-// Check system preference for dark mode on mount
-useEffect(() => {
-  if (typeof window !== 'undefined') {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDarkMode(prefersDark);
-
-    // Set up listener for changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
-    mediaQuery.addEventListener('change', handleChange);
-    
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }
-}, []);
 
 // Add responsive sizing hooks
 const [windowWidth, setWindowWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 0);
@@ -100,7 +85,7 @@ const getIconForAmenity = (amenity: string) => {
   return <Sparkles size={size} />;
 };
 
-// Modern gradients replacing the dark mode variants
+// Fixed gradients for icons
 const getGradientForAmenity = (amenity: string, index: number) => {
   const gradients = [
     'from-blue-400 to-indigo-400',
@@ -111,17 +96,7 @@ const getGradientForAmenity = (amenity: string, index: number) => {
     'from-teal-400 to-cyan-400',
   ];
   
-  // Modern dark mode gradients - using more vibrant colors instead of darker tones
-  const darkGradients = [
-    'from-violet-500 to-purple-600',
-    'from-emerald-500 to-teal-600',
-    'from-amber-500 to-orange-600',
-    'from-sky-500 to-blue-600',
-    'from-pink-500 to-rose-600',
-    'from-cyan-500 to-blue-600',
-  ];
-  
-  return isDarkMode ? darkGradients[index % darkGradients.length] : gradients[index % gradients.length];
+  return gradients[index % gradients.length];
 };
 
 return (
@@ -129,13 +104,13 @@ return (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, ease: "easeOut" }}
-    className={`${isDarkMode ? 'border-indigo-800/30 ' : ''} backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-lg p-4 sm:p-6 md:p-8 overflow-hidden border transition-colors duration-300 w-full mx-auto`}
+    className="rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 w-full mx-auto"
   >
     <motion.h2 
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.1, duration: 0.5 }}
-      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 flex items-center break-words"
+      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 flex items-center break-words text-gray-900 dark:text-gray-900"
     >
       <div className="relative ms-0 me-8 sm:me-10 flex-shrink-0">
         <motion.div 
@@ -148,17 +123,16 @@ return (
             repeat: Infinity, 
             repeatDelay: 7
           }}
-          className={`bg-gradient-to-br ${isDarkMode ? 'from-violet-500 to-indigo-600' : 'from-blue-400 to-indigo-500'} 
-            rounded-lg sm:rounded-xl p-2 sm:p-2.5 shadow-md`}
+          className="bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg sm:rounded-xl p-2 sm:p-2.5 shadow-md"
         >
-          <Sparkles size={22} className="sm:hidden relative z-10" />
-          <Sparkles size={28} className="hidden sm:block relative z-10" />
+          <Sparkles size={22} className="sm:hidden relative z-10 text-white" />
+          <Sparkles size={28} className="hidden sm:block relative z-10 text-white" />
         </motion.div>
       </div>
       {tOfferId('property.premiumAmenities')}
     </motion.h2>
     
-    <motion.div 
+    <motion.div  
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -171,19 +145,17 @@ return (
           whileHover={{ scale: 1.02, y: -2 }}
           whileTap={{ scale: 0.98 }}
           className={`flex ${isMobile ? 'w-full' : 'items-center'} rounded-xl p-3 sm:p-4 transition-all duration-200 
-            hover:bg-white/80 dark:hover:bg-slate-700/60 
-            ${isMobile ? 'border-b border-slate-200 dark:border-slate-600' : 'border border-transparent hover:border-slate-200 dark:hover:border-slate-600'} 
             ${isMobile ? 'my-1' : 'm-1 sm:m-2'}`}
         >
           <div className={`${isMobile ? 'w-12 h-12' : 'w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18'} rounded-xl bg-gradient-to-br ${getGradientForAmenity(amenity, index)} 
-            flex items-center justify-center text-white ms-0 me-8 sm:me-10 md:me-12 flex-shrink-0 shadow-sm group-hover:shadow-md 
-            transition-all duration-300 group-hover:rotate-0`}>
+            flex items-center justify-center text-white ms-0 me-8 sm:me-10 md:me-12 flex-shrink-0 shadow-sm
+            transition-all duration-300`}>
             <div className="">
               {getIconForAmenity(amenity)}
             </div>
           </div>
           <div className="pt-1 flex-1 ps-2">
-            <p className={`${isMobile ? 'text-lg' : 'text-lg sm:text-xl md:text-2xl'} font-medium ${isDarkMode ? ' group-hover:text-blue-300' : 'text-slate-800 group-hover:text-blue-600'} 
+            <p className={`${isMobile ? 'text-lg' : 'text-lg sm:text-xl md:text-2xl'} font-medium text-gray-800 dark:text-gray-900
               ${isMobile ? 'break-words' : 'whitespace-nowrap'} transition-colors duration-200 relative`}>
               {amenity}
             </p>
@@ -194,7 +166,7 @@ return (
     
     {amenities.length === 0 && (
       <div className="text-center py-6">
-        <p className="text-slate-500 dark:text-slate-400">No amenities available</p>
+        <p className="">No amenities available</p>
       </div>
     )}
   </motion.div>

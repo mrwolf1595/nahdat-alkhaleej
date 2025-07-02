@@ -72,7 +72,7 @@ export default function Footer() {
         <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-zinc-800 to-black z-5"></div>
       )}
       
-      {/* YouTube Video Background with 4K quality */}
+      {/* YouTube Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         {/* Gradient overlay for better readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/50 z-10"></div>
@@ -80,36 +80,32 @@ export default function Footer() {
         {/* YouTube iframe with client-side only rendering */}
         {isMounted && isVisible && (
           <iframe
-            src="https://www.youtube.com/embed/juf8Igbs7tQ?autoplay=1&mute=1&loop=1&playlist=juf8Igbs7tQ&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&cc_load_policy=0&playsinline=1&enablejsapi=1&vq=hd2160&hd=1&fmt=313"
+            src="https://www.youtube.com/embed/RtDShqKQ2Lk?si=vYgqO_k8sqJn9rdM&autoplay=1&mute=1&loop=1&playlist=RtDShqKQ2Lk&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&cc_load_policy=0&playsinline=1&enablejsapi=1&vq=hd1080"
             title="Footer Background Video"
-            allow="autoplay; encrypted-media"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen={false}
-            className="absolute brightness-[0.4] pointer-events-none"
+            onLoad={() => setIsVideoLoaded(true)}
+            className={`absolute w-full h-full object-cover transform scale-105 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700 pointer-events-none`}
             style={{
               border: 'none',
               width: '100vw',
-              height: '56.25vw', // 16:9 aspect ratio based on viewport width
+              height: '56.25vw',
               minHeight: '100vh',
-              minWidth: '177.78vh', // 16:9 aspect ratio based on viewport height
+              minWidth: '177.78vh',
               top: '50%',
               left: '50%',
-              transform: 'translate(-50%, -50%)',
-              zIndex: 1,
+              transform: 'translate(-50%, -50%) scale(1.1)',
+              willChange: 'transform',
             }}
-            onLoad={() => setIsVideoLoaded(true)}
             suppressHydrationWarning
           />
         )}
         
-        {/* Fallback static image when video is not loaded */}
-        {(!isVisible || !isVideoLoaded) && (
-          <div 
-            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{ 
-              backgroundImage: "url('/100110.jpg')",
-              filter: 'brightness(0.4)'
-            }}
-          />
+        {/* Fallback gradient background if video fails to load */}
+        {!isVideoLoaded && isMounted && (
+          <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-slate-900 to-black"></div>
         )}
       </div>
 

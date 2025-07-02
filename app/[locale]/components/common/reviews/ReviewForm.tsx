@@ -27,7 +27,7 @@ export default function ReviewForm({ targetId, targetType, onReviewAdded }: Prop
       toast.error(t('ratingRequired'), {
         style: {
           borderRadius: '10px',
-          background: '#333',
+          background: '#1F2937',
           color: '#fff',
         },
         icon: '⚠️',
@@ -49,7 +49,7 @@ export default function ReviewForm({ targetId, targetType, onReviewAdded }: Prop
         toast.success(t('submitSuccess'), {
           style: {
             borderRadius: '10px',
-            background: '#10B981',
+            background: '#059669',
             color: '#fff',
           },
           icon: '🎉',
@@ -66,7 +66,7 @@ export default function ReviewForm({ targetId, targetType, onReviewAdded }: Prop
         toast.error(t('submitError'), {
           style: {
             borderRadius: '10px',
-            background: '#333',
+            background: '#DC2626',
             color: '#fff',
           },
           icon: '❌',
@@ -76,7 +76,7 @@ export default function ReviewForm({ targetId, targetType, onReviewAdded }: Prop
       toast.error(t('generalError'), {
         style: {
           borderRadius: '10px',
-          background: '#333',
+          background: '#DC2626',
           color: '#fff',
         },
         icon: '❌',
@@ -89,11 +89,11 @@ export default function ReviewForm({ targetId, targetType, onReviewAdded }: Prop
   // Confetti animation component
   const Confetti = () => {
     return (
-      <div className="fixed inset-0 pointer-events-none flex items-center justify-center">
-        {Array.from({ length: 50 }).map((_, index) => (
+      <div className="fixed inset-0 pointer-events-none flex items-center justify-center z-50">
+        {Array.from({ length: 30 }).map((_, index) => (
           <motion.div
             key={index}
-            className="absolute w-2 h-2 bg-primary rounded-full"
+            className="absolute w-2 h-2 rounded-full"
             initial={{ 
               top: '50%', 
               left: '50%',
@@ -102,16 +102,16 @@ export default function ReviewForm({ targetId, targetType, onReviewAdded }: Prop
             animate={{ 
               top: `${Math.random() * 100}%`, 
               left: `${Math.random() * 100}%`,
-              scale: Math.random() * 2 + 0.5,
+              scale: Math.random() * 1.5 + 0.5,
               opacity: 0
             }}
             transition={{ 
-              duration: 1.5, 
+              duration: 1.2, 
               ease: 'easeOut',
               delay: Math.random() * 0.2
             }}
             style={{
-              backgroundColor: ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF'][Math.floor(Math.random() * 4)]
+              backgroundColor: ['#F59E0B', '#10B981', '#3B82F6', '#8B5CF6'][Math.floor(Math.random() * 4)]
             }}
           />
         ))}
@@ -125,10 +125,10 @@ export default function ReviewForm({ targetId, targetType, onReviewAdded }: Prop
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <form onSubmit={handleSubmit} className="space-y-6 rounded-xl bg-white dark:bg-zinc-800/60 p-6 backdrop-blur-sm shadow-xl border border-zinc-200 dark:border-zinc-700">
-        <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{t('yourRating')}</label>
-          <div className="flex items-center gap-1">
+      <form onSubmit={handleSubmit} className="space-y-6 rounded-xl bg-white dark:bg-gray-800 p-6 shadow-lg border border-zinc-200 dark:border-gray-700">
+        <div className="flex flex-col gap-3">
+          <label className="text-sm font-medium text-zinc-700 dark:text-gray-300">{t('yourRating')}</label>
+          <div className="flex items-center gap-2">
             {[1, 2, 3, 4, 5].map((i) => (
               <motion.button
                 key={i}
@@ -136,19 +136,19 @@ export default function ReviewForm({ targetId, targetType, onReviewAdded }: Prop
                 onClick={() => setRating(i)}
                 onMouseEnter={() => setHoveredRating(i)}
                 onMouseLeave={() => setHoveredRating(0)}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-full"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="p-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 rounded-full transition-all duration-200"
               >
                 <Star 
-                  size={24} 
+                  size={28} 
                   fill={i <= (hoveredRating || rating) ? '#FBBF24' : 'transparent'} 
-                  stroke={i <= (hoveredRating || rating) ? '#FBBF24' : '#94A3B8'}
+                  stroke={i <= (hoveredRating || rating) ? '#FBBF24' : '#D1D5DB'}
                   strokeWidth={1.5}
                   className={`transition-all duration-200 ${
                     i <= (hoveredRating || rating) 
-                      ? 'text-yellow-400 fill-yellow-400' 
-                      : 'text-zinc-300 dark:text-zinc-600'
+                      ? 'text-amber-500' 
+                      : 'text-zinc-300 dark:text-gray-500'
                   }`}
                 />
               </motion.button>
@@ -157,17 +157,17 @@ export default function ReviewForm({ targetId, targetType, onReviewAdded }: Prop
               key={rating}
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
-              className="ml-2 text-sm font-medium text-zinc-600 dark:text-zinc-400"
+              className="ml-3 text-sm font-medium text-gray-600 dark:text-gray-400"
             >
               {rating ? t(`ratingLabels.${rating}`) : ''}
             </motion.span>
           </div>
         </div>
 
-        <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{t('yourComment')}</label>
+        <div className="flex flex-col gap-3">
+          <label className="text-sm font-medium text-zinc-700 dark:text-gray-300">{t('yourComment')}</label>
           <motion.div
-            whileFocus={{ scale: 1.01 }}
+            whileFocus={{ scale: 1.005 }}
             className="relative overflow-hidden rounded-lg"
           >
             <textarea
@@ -175,12 +175,12 @@ export default function ReviewForm({ targetId, targetType, onReviewAdded }: Prop
               onChange={(e) => setComment(e.target.value)}
               placeholder={t('commentPlaceholder')}
               rows={4}
-              className="w-full p-3 border border-zinc-200 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 dark:placeholder-zinc-500 transition-all duration-200 focus:border-indigo-500 dark:focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20 dark:focus:ring-indigo-400/20 focus:outline-none resize-none"
+              className="w-full p-4 border border-zinc-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-zinc-900 dark:text-gray-100 placeholder-zinc-500 dark:placeholder-gray-400 transition-all duration-200 focus:border-indigo-500 dark:focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20 dark:focus:ring-indigo-400/20 focus:outline-none resize-none"
             />
             <motion.div 
               className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500"
               initial={{ width: '0%' }}
-              animate={{ width: `${Math.min(100, comment.length / 2)}%` }}
+              animate={{ width: `${Math.min(100, comment.length / 3)}%` }}
               transition={{ duration: 0.3 }}
             />
           </motion.div>
@@ -190,7 +190,7 @@ export default function ReviewForm({ targetId, targetType, onReviewAdded }: Prop
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="text-xs text-right text-zinc-500 dark:text-zinc-400"
+                className="text-xs text-right text-gray-500 dark:text-gray-400"
               >
                 {comment.length} {t('characters')}
               </motion.p>
@@ -202,9 +202,9 @@ export default function ReviewForm({ targetId, targetType, onReviewAdded }: Prop
           <motion.button
             type="submit"
             disabled={isSubmitting}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium shadow-lg shadow-indigo-500/20 transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium shadow-lg shadow-indigo-500/25 transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
             {isSubmitting ? (
               <Loader2 size={18} className="animate-spin" />
