@@ -3,9 +3,9 @@ import { connectDB } from '@/lib/mongodb';
 import TeamMember from '@/models/TeamMember';
 
 // GET: Get single team member
-export async function GET(request: NextRequest, context: { params: { id: string } }) {
+export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   await connectDB();
-  const { id } = context.params;
+  const { id } = params;
 
   try {
     const member = await TeamMember.findById(id);
@@ -22,10 +22,10 @@ export async function GET(request: NextRequest, context: { params: { id: string 
 }
 
 // PUT: Update single team member
-export async function PUT(request: NextRequest, context: { params: { id: string } }) {
+export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
   await connectDB();
   const body = await request.json();
-  const { id } = context.params;
+  const { id } = params;
 
   try {
     const updated = await TeamMember.findByIdAndUpdate(id, body, { new: true });
