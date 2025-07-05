@@ -65,6 +65,14 @@ export default function AdminTeamPage() {
               <h3 className="text-lg font-semibold text-blue-700">{member.name}</h3>
               <p className="text-sm text-gray-600">{member.role}</p>
               <p className="text-gray-500 mt-2">{member.bio}</p>
+
+              {/* EDIT BUTTON - here inside the map */}
+              <Link
+                href={`/admin/team/edit/${member._id}`}
+                className="mt-3 px-4 py-1 bg-yellow-500 text-white rounded-lg text-sm hover:bg-yellow-600"
+              >
+                Edit
+              </Link>
             </motion.div>
           ))}
         </div>
