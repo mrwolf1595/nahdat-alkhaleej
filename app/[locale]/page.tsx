@@ -17,6 +17,7 @@ export default function HomePage() {
   return (
     <>
       {/* Welcome text */}
+      <meta name="google-site-verification" content="Ov3AmkBq-_t4CuKCZILQd68aBglvRNIIKv0ihxjHG34" />
       <div className="text-center mt-10">
         <h1 className="text-3xl font-bold">{t('welcome')}</h1>
       </div>
